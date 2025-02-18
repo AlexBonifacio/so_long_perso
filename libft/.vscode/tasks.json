@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build C Program",
+        "type": "shell",
+        "command": "gcc",
+        "args": [
+          "-g",                             // Générer des informations de débogage
+          "${file}",                        // Fichier source ouvert
+          "-o",                             // Option pour spécifier le nom de l'exécutable
+          "${workspaceFolder}/${fileBasenameNoExtension}", // Nom de l'exécutable basé sur le fichier source
+        ],
+        "group": {
+          "kind": "build",                  // Groupe de compilation
+          "isDefault": true                 // Définit cette tâche comme tâche par défaut
+        },
+        "problemMatcher": ["$gcc"],         // Pour détecter les erreurs et avertissements dans le terminal
+        "detail": "Compile C program with debugging information",
+        "runOptions": {
+        "runOn": "folderOpen", // Exécute la tâche seulement quand nécessaire
+        "reevaluateOnRerun": true
+      },
+      "presentation": {
+        "reveal": "never", // Ne montre pas automatiquement le terminal
+        "close": true      // Ferme automatiquement le terminal après la compilation
+      }
+      }
+    ]
+  }
+  

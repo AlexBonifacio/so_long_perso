@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Déboguer mon programme C",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Activer la saisie semi-automatique pour GDB",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Ignorer les fonctions système",
+          "text": "set step-mode on",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Ignorer le démarrage de libc",
+          "text": "skip file libc-start.c",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:25:04 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/17 22:52:40 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/02/19 22:14:15 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,9 @@ size_t	ft_putnbr_u(unsigned int uint_n);
 ssize_t	ft_putstr(const char *s);
 int		ft_printf(const char *str, ...);
 
+/*gnl*/
+char	*ft_strjoin_gnl(char *s1, char const *s2, ssize_t l_s1, ssize_t len_s2);
+
 /*linked list*/
 void	ft_print_list(t_node *list);
 void	ft_lstclear(t_node **lst);
@@ -76,5 +79,6 @@ void	ft_lstclear(t_node **lst);
 long	ft_atol(const char *str);
 void	ft_bubblesort(int *tab, int tab_size);
 void	*ft_realloc(void *buffer, size_t new_size, size_t old_size);
+char	*ft_strcpy(char *dest, char *src);
 
 #endif

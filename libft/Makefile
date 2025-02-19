@@ -6,7 +6,7 @@
 #    By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 00:40:59 by abonifac          #+#    #+#              #
-#    Updated: 2025/02/18 00:38:00 by abonifac         ###   ########.fr        #
+#    Updated: 2025/02/19 22:09:43 by abonifac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRCS = ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 			ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_strmapi.c \
 			ft_printf.c ft_putchar.c ft_putadress.c ft_putnbr.c ft_putnbr_base.c \
 			ft_putnbr_u.c ft_putstr.c ft_atol.c ft_print_list.c ft_lstclear.c \
-			ft_bubblesort.c ft_realloc.c
+			ft_bubblesort.c ft_realloc.c get_next_line_bonus.c \
+			get_next_line_utils_bonus.c ft_strcpy.c
 			
 OBJ_DIR = obj
 OBJ = $(SRCS:%.c=$(OBJ_DIR)/%.o)

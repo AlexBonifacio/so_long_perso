@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 16:19:22 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/19 20:03:47 by abonifac         ###   ########.fr       */
+/*   Created: 2025/01/21 17:59:26 by abonifac          #+#    #+#             */
+/*   Updated: 2025/01/26 20:42:27 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-#include "mlx.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <X11/X.h>
-#include <X11/keysym.h>
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include <stdlib.h>
 
-typedef struct s_data
-{
-	void *mlx_ptr;
-	void *win_ptr;
-} t_data;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-int main(void)
-{
-	void	*mlx;
-	// void	*mlx_win;
-	
-	mlx = mlx_init();
-	mlx_new_window(mlx, 1920, 1080, "HELLO");
-	mlx_loop(mlx);
-	
-}
+ssize_t	ft_strlen(const char *s);
+char	*ft_strjoin(char *s1, char const *s2, ssize_t len_s1, ssize_t len_s2);
+char	*ft_strcpy(char *dest, char *src);
+char	*ft_strdup(char *s);
+char	*ft_strchr(const char *s, int c);
+char	*get_next_line(int fd);
+
+#endif

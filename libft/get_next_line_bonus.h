@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 16:47:13 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/19 22:14:37 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/02/20 00:27:01 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@
 
 char	*get_next_line(int fd);
 char	*ft_strjoin_gnl(char *s1, char const *s2, ssize_t l_s1, ssize_t len_s2);
-char	*get_next_line(int fd);
 
 #endif

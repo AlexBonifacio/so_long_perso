@@ -1,49 +1,50 @@
-NAME = so_long
+NAME        = so_long
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# Répertoires
+SRC_DIR     = src
+OBJ_DIR     = obj
+INC_DIR     = includes
+LIBFT_DIR   = libft
+MLX_DIR     = mlx
 
-INCLUDES = -Iinc -Imlx
+# Recherche de tous les fichiers sources dans SRC_DIR
+SRC         = src/main.c
+# Transformation des fichiers .c en fichiers .o dans OBJ_DIR
+OBJ         = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
-RM = rm
-RMFLAG = -f
+# Options du compilateur
+CC          = gcc
+CFLAGS      = -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
 
-MLX_DIR = ./mlx
-MLX_LIB = $(MLX_DIR)/libmlx_Linux.a
+# Bibliothèques
+LIBFT       = $(LIBFT_DIR)/libft.a
+MLX_LIB     = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
-MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
+all: $(NAME)
 
+$(NAME): $(LIBFT) $(OBJ)
+	@$(MAKE) -C $(MLX_DIR)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX_LIB) -o $(NAME)
 
-SRCS = \
-	src/main.c \
-	src/ft_print_error.c
+# Compilation de chaque fichier source en objet
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-SRC_DIR = src
-OBJ_DIR = obj
-OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-
-all: $(MLX_LIB) $(OBJ_DIR) $(NAME) 
-
-
-$(OBJ_DIR):
-	mkdir -p $@
-
-$(OBJ_DIR)/%.o: src/%.c Makefile 
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ 
-
-$(NAME): $(OBJS) $(MLX_LIB)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS)
-
-$(MLX_LIB):
-	@make -C $(MLX_DIR)
+# Construction de la libft
+$(LIBFT):
+	@$(MAKE) -C $(LIBFT_DIR)
 
 clean:
-	$(RM) $(RMFLAG) $(OBJS)
+	rm -rf $(OBJ_DIR)
+	@$(MAKE) -C $(LIBFT_DIR) clean
+	@$(MAKE) -C $(MLX_DIR) clean
 
 fclean: clean
-	$(RM) $(RMFLAG) $(NAME)
-	if [ -d "./mlx" ]; then make -C $(MLX_DIR) clean; fi
+	rm -f $(NAME)
+	@$(MAKE) -C $(LIBFT_DIR) fclean
+	@$(MAKE) -C $(MLX_DIR) fclean
 
 re: fclean all
 
-.PHONY: all clean run fclean re 
+.PHONY: all clean fclean re

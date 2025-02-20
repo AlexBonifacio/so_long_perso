@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:25:04 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/19 22:14:15 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/02/20 00:27:12 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdarg.h>
+# include <fcntl.h>
 
 typedef struct s_node
 {
@@ -70,6 +71,7 @@ int		ft_printf(const char *str, ...);
 
 /*gnl*/
 char	*ft_strjoin_gnl(char *s1, char const *s2, ssize_t l_s1, ssize_t len_s2);
+char	*get_next_line(int fd);
 
 /*linked list*/
 void	ft_print_list(t_node *list);

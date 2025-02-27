@@ -1,22 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_score_position.c                              :+:      :+:    :+:   */
+/*   score.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:51:10 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/27 15:04:35 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:44:14 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "libft.h"
+#include "mlx.h"
+#include <X11/X.h>
+#include <X11/keysym.h>
+
+
+void	init_score_position(t_game *game)
+{
+	game->score_x[0] = -1;
+	game->score_x[1] = -1;
+	game->score_x[2] = -1;
+	game->score_y = -1;
+}
+
+void	check_score_init(t_game *game)
+{
+	if (game->score_x[0] == -1 || game->score_x[1] == -1 ||
+		game->score_x[2] == -1 || game->score_y == -1)
+	{
+		ft_printf("Error: missing score in map\n");
+		free_game(game);
+		exit(EXIT_FAILURE);
+	}
+}
 
 void	find_score_position(t_game *game)
 {
 	int	x;
 	int	y;
 	
+	init_score_position(game);
 	y = 0;
 	while (game->map[y])
 	{
@@ -36,4 +61,22 @@ void	find_score_position(t_game *game)
 		}
 		y++;
 	}
+	check_score_init(game);
+}
+
+void	update_score(t_game *game, int count)
+{
+	int	u;
+	int d;
+	int	h;
+	
+	u = count % 10;
+	d = (count / 10) % 10;
+	h = (count / 100) % 10;
+	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.score[u],
+		game->score_x[2] * TILE_SIZE, game->score_y * TILE_SIZE);
+	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.score[d],
+		game->score_x[1] * TILE_SIZE, game->score_y * TILE_SIZE);
+	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.score[h],
+		game->score_x[0] * TILE_SIZE, game->score_y * TILE_SIZE);
 }

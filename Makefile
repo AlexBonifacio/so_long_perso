@@ -9,7 +9,7 @@ MLX_DIR     = mlx
 
 # Recherche de tous les fichiers sources dans SRC_DIR
 SRC_FILES        = main.c count_in_map.c check_nb_assets.c free_game.c \
-				init_player.c map_line_len.c load_digit.c score.c \
+				init_structs.c map_line_len.c load_digit.c score.c \
 
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))

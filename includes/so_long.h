@@ -42,6 +42,8 @@ typedef struct s_game
 	t_player 	player;
 } t_game;
 
+# define TILE_SIZE 128
+
 void	ft_print_error(void);
 int	count_in_map(t_game *game, char c);
 int	check_nb_assets(t_game *game);
@@ -51,5 +53,7 @@ void	init_player(t_player *player);
 int	map_line_len(char *line);
 void	load_digits(t_game *game);
 void	find_score_position(t_game *game);
+void	update_score(t_game *game, int count);
+void	init_game(t_game *game);
 
 #endif

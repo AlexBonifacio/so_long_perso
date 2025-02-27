@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:58:57 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/27 13:57:36 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:06:29 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <X11/X.h>
 #include <X11/keysym.h>
 
-void	free_map(t_game *game)
+void free_map(t_game *game)
 {
 	int y;
-	
+
 	y = 0;
 	if (game->map)
 	{
@@ -30,7 +30,7 @@ void	free_map(t_game *game)
 	}
 }
 
-void	ft_free_score(t_game *game)
+void ft_free_score(t_game *game)
 {
 	int i;
 
@@ -41,31 +41,32 @@ void	ft_free_score(t_game *game)
 		game->txtrs.score[i] = NULL;
 		i++;
 	}
-	return ;
+	return;
 }
 
 void free_game(t_game *game)
-{	
+{
 	if (!game)
 		return;
 	free_map(game);
-	if (game->txtrs.wall)
-		mlx_destroy_image(game->mlx_ptr, game->txtrs.wall);
-	if (game->txtrs.ground)
-		mlx_destroy_image(game->mlx_ptr, game->txtrs.ground);
-	if (game->txtrs.exit)
-		mlx_destroy_image(game->mlx_ptr, game->txtrs.exit);
-	if (game->txtrs.player)
-		mlx_destroy_image(game->mlx_ptr, game->txtrs.player);
-	if (game->txtrs.gather)
-		mlx_destroy_image(game->mlx_ptr, game->txtrs.gather);
-	if (game->txtrs.score[0])
-		ft_free_score(game);
-	if (game->win_ptr)
-		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 	if (game->mlx_ptr)
 	{
+		if (game->txtrs.wall)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.wall);
+		if (game->txtrs.ground)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.ground);
+		if (game->txtrs.exit)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.exit);
+		if (game->txtrs.player)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.player);
+		if (game->txtrs.gather)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.gather);
+		if (game->txtrs.score[0])
+			ft_free_score(game);
+		if (game->win_ptr)
+			mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 		mlx_destroy_display(game->mlx_ptr);
 		free(game->mlx_ptr);
 	}
+	exit(EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:19:22 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/27 15:06:51 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:26:52 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "mlx.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
-#define TILE_SIZE 128
 
 void load_assets(t_game *game, int w, int h);
 
@@ -209,26 +208,8 @@ void check_move_exit(t_game *game, int old_x, int old_y)
 	}
 }
 
-void display_moves(t_game *game)
-{
-	char *moves_str;
 
-	moves_str = ft_itoa(game->player.moves); // Convertir le nombre en string
-	mlx_string_put(game->mlx_ptr, game->win_ptr, 10, 10, 0xFFFFFF, "Mouvements :");
-	mlx_string_put(game->mlx_ptr, game->win_ptr, 130, 10, 0xFFFFFF, moves_str);
-	free(moves_str); // Libérer la mémoire de ft_itoa
-}
-void clear_text_area(t_game *game)
-{
-	int x, y;
-
-	// Dessiner un rectangle de fond pour effacer l'ancien texte
-	for (y = 0; y < 20; y++)
-		for (x = 0; x < 200; x++)
-			mlx_pixel_put(game->mlx_ptr, game->win_ptr, x, y, 0x000000); // Noir
-}
-
-int player_move(int key, t_game *game)
+void player_move(int key, t_game *game)
 {
 	static int count;
 	int old_x = game->player.x;
@@ -249,18 +230,15 @@ int player_move(int key, t_game *game)
 		check_move_exit(game, old_x, old_y);
 
 	count++;
+	update_score(game, count);
 	if (game->map[game->player.y][game->player.x] == 'C')
 		game->player.collected++;
 	ft_printf("Move count %i\n", count);
-	clear_text_area(game);
-	display_moves(game);
 	update_map(game, old_x, old_y);
 	if (game->player.collected == game->coins)
 	{
 		game->player.game_won = 1;
 	}
-
-	return (0);
 }
 
 int close_window(t_game *game)
@@ -283,48 +261,46 @@ int key_handler(int key, t_game *game)
 
 void map_checker(t_game *game)
 {
+	if (!game->map)
+	{
+		ft_printf("Error: fail to load the map\n");
+		free_game(game);
+		exit(EXIT_FAILURE);
+	}
 	check_nb_assets(game);
+	find_score_position(game);
 }
 
+void	init_structs_null(t_game *game)
+{
+	init_game(game);
+	init_player(&game->player);
+}
+
+void	render(t_game *game)
+{
+	load_assets(game, TILE_SIZE, TILE_SIZE);
+	render_map(game);
+	render_player(game);
+}
 int main(void)
 {
-
 	t_game game;
-
-	int w = TILE_SIZE;
-	int h = TILE_SIZE;
 	int win_w;
 	int win_h;
 
+	init_structs_null(&game);
 	game.map = load_map("map.ber");
-	if (!game.map)
-	{
-		ft_printf("Error : fail to load the map.\n");
-		free_game(&game);
-		return (1);
-	}
 	map_checker(&game);
-
 	game.mlx_ptr = mlx_init();
 	if (!game.mlx_ptr)
-		return (1);
-	init_player(&game.player);
-
+		free_game(&game);
 	get_map_size(&game, &win_w, &win_h);
-
 	game.win_ptr = mlx_new_window(game.mlx_ptr, win_w, win_h, "so_long");
 	if (!game.win_ptr)
-	{
 		free_game(&game);
-		return (1);
-	}
-
-	load_assets(&game, w, h);
-
-	render_map(&game);
-	render_player(&game);
+	render(&game);
 	game.coins = count_in_map(&game, 'C');
-	ft_printf("game coins %i\n", game.coins);
 
 	mlx_hook(game.win_ptr, 17, 0, close_window, &game);
 	mlx_key_hook(game.win_ptr, key_handler, &game);

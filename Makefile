@@ -8,13 +8,18 @@ LIBFT_DIR   = libft
 MLX_DIR     = mlx
 
 # Recherche de tous les fichiers sources dans SRC_DIR
-SRC         = src/main.c
+SRC_FILES        = main.c count_in_map.c check_nb_assets.c free_game.c \
+				init_player.c map_line_len.c load_digit.c score.c \
+
+
+SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+
 # Transformation des fichiers .c en fichiers .o dans OBJ_DIR
 OBJ         = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
 # Options du compilateur
-CC          = gcc
-CFLAGS      = -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
+CC          = cc
+CFLAGS      = -g3 -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
 
 # Bibliothèques
 LIBFT       = $(LIBFT_DIR)/libft.a
@@ -27,7 +32,7 @@ $(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX_LIB) -o $(NAME)
 
 # Compilation de chaque fichier source en objet
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 

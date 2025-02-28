@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/abonifac/milestone2/so_long_perso/src",
-      "program": "/home/abonifac/milestone2/so_long_perso/src/build/Debug/outDebug",
+      "cwd": "/home/alex/milestone2/so_long_perso/src",
+      "program": "/home/alex/milestone2/so_long_perso/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

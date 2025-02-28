@@ -42,18 +42,33 @@ typedef struct s_game
 	t_player 	player;
 } t_game;
 
-# define TILE_SIZE 128
+# define TILE_S 128
 
-void	ft_print_error(void);
+void	w_error(char *msg);
 int	count_in_map(t_game *game, char c);
 int	check_nb_assets(t_game *game);
 void free_game(t_game *game);
 void	free_map(t_game *game);
-void	init_player(t_player *player);
 int	map_line_len(char *line);
 void	load_digits(t_game *game);
 void	find_score_position(t_game *game);
 void	update_score(t_game *game, int count);
-void	init_game(t_game *game);
+void	load_walls(t_game *game, int w, int h);
+void	load_ground(t_game *game, int w, int h);
+void	load_player(t_game *game, int w, int h);
+void	load_gather(t_game *game, int w, int h);
+void	load_exit(t_game *game, int w, int h);
+void	load_assets(t_game *game, int w, int h);
+void	render_map(t_game *game);
+void	render_player(t_game *game);
+void	render_score_handler(t_game *game, int x, int y);
+void	render_map_handler(t_game *game, int x, int y);
+void	update_map(t_game *game, int old_x, int old_y);
+int	check_move(t_game *game, char c);
+void	check_move_exit(t_game *game, int old_x, int old_y);
+void	player_move(int key, t_game *game);
+void	map_checker(t_game *game);
+void	init_structs_null(t_game *game);
+void	render(t_game *game);
 
 #endif

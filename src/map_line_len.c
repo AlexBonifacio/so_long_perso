@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
 #include "libft.h"
+#include "so_long.h"
 
 int	map_line_len(char *line)
 {

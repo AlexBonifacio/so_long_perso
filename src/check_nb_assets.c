@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
 #include "libft.h"
-
+#include "so_long.h"
 
 int	check_nb_assets(t_game *game)
 {
@@ -25,4 +24,3 @@ int	check_nb_assets(t_game *game)
 	}
 	return (1);
 }
-

@@ -6,13 +6,15 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:20:02 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/20 00:08:44 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:12:46 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	ft_print_error(void)
+void	w_error(char *msg)
 {
-	write(2, "Error\n", 6);
+	if (write(2, msg, ft_strlen(msg)) == -1)
+		write(2, "Error: write() failed\n", 22);
 }

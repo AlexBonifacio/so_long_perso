@@ -14,10 +14,10 @@
 
 int	count_in_map(t_game *game, char c)
 {
-	int count;
+	int	count;
 	int	i;
 	int	y;
-	
+
 	count = 0;
 	i = 0;
 	y = 0;

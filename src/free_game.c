@@ -6,19 +6,19 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:58:57 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/27 17:06:29 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:28:56 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-#include <stdlib.h>
 #include "mlx.h"
+#include "so_long.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
+#include <stdlib.h>
 
-void free_map(t_game *game)
+void	free_map(t_game *game)
 {
-	int y;
+	int	y;
 
 	y = 0;
 	if (game->map)
@@ -30,9 +30,9 @@ void free_map(t_game *game)
 	}
 }
 
-void ft_free_score(t_game *game)
+void	ft_free_score(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 10 && game->txtrs.score[i])
@@ -41,13 +41,13 @@ void ft_free_score(t_game *game)
 		game->txtrs.score[i] = NULL;
 		i++;
 	}
-	return;
+	return ;
 }
 
-void free_game(t_game *game)
+void	free_game(t_game *game)
 {
 	if (!game)
-		return;
+		return ;
 	free_map(game);
 	if (game->mlx_ptr)
 	{

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:43:43 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 12:24:28 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/02 19:09:27 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_textures
 
 typedef struct s_map
 {
-	char **map;
+	char 	**map;
 	int		width;
 	int		height;
 	int 	coins;
@@ -109,5 +109,6 @@ char			**load_map(char *filename);
 char			*add_counter(char *line);
 void			get_position(t_game *game, char c, int *x, int *y);
 void			get_map_size(t_game *game, int *width, int *height);
+int				animate_enemies(t_game *game);
 
 #endif

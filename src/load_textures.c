@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 15:25:45 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/01 12:39:40 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/02 19:41:05 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 #include "mlx.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
+
+void	load_assets(t_game *game, int w, int h)
+{
+	load_walls(game, w, h);
+	load_ground(game, w, h);
+	load_player(game, w, h);
+	load_gather(game, w, h);
+	load_exit(game, w, h);
+	load_exit_closed(game, w, h);
+	load_digits(game);
+	load_ennemy(game, w, h);
+}
 
 void	load_walls(t_game *game, int w, int h)
 {
@@ -60,17 +72,5 @@ void	load_gather(t_game *game, int w, int h)
 		w_error("Error: fail to load gather\n");
 		free_game(game);
 		exit(EXIT_FAILURE);
-	}
-}
-
-void	load_exit(t_game *game, int w, int h)
-{
-	game->txtrs.exit = mlx_xpm_file_to_image(game->mlx_ptr,
-			"textures/extracted_floor/tile_10_12.xpm", &w, &h);
-	if (!game->txtrs.exit)
-	{
-		w_error("Error : fail to load exit\n");
-		free_game(game);
-		exit(1);
 	}
 }

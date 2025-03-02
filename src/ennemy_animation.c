@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_error.c                                   :+:      :+:    :+:   */
+/*   ennemy_animation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 16:20:02 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/28 15:12:46 by abonifac         ###   ########.fr       */
+/*   Created: 2025/03/02 19:08:50 by abonifac          #+#    #+#             */
+/*   Updated: 2025/03/02 20:44:47 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
+#include "mlx.h"
 #include <unistd.h>
+#include <X11/X.h>
+#include <X11/keysym.h>
 
-void	w_error(char *msg)
+int	animate_enemies(t_game *game)
 {
-	if (write(2, msg, ft_strlen(msg)) == -1)
-		write(2, "Error: write() failed\n", 22);
+	static int		frame_counter;
+	static int		i;
+
+	frame_counter++;
+	if (i == 4)
+		i = 0;
+	if (frame_counter >= 10000)
+	{
+		frame_counter = 0;
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+			game->txtrs.ennemy[i],
+			game->ennemy.x * TILE_S, game->ennemy.y * TILE_S);
+		i++;
+	}
+	return (0);
 }

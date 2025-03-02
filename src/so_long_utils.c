@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 22:43:11 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 13:08:19 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/02 19:54:40 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,25 @@ void	get_position(t_game *game, char c, int *x, int *y)
 		}
 		i++;
 	}
+}
+
+void	get_map_size(t_game *game, int *width, int *height)
+{
+	int	x;
+	int	y;
+
+	if ((!game->map.map) || (!game->map.map[0]))
+	{
+		w_error("Error: map is empty\n");
+		free_game(game);
+		exit(EXIT_FAILURE);
+	}
+	y = 0;
+	while (game->map.map[y])
+		y++;
+	*height = y * TILE_S;
+	x = 0;
+	while (game->map.map[0][x])
+		x++;
+	*width = x * TILE_S;
 }

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:51:10 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 13:08:03 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/02 19:55:31 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	init_score_position(t_game *game)
 
 void	check_score_init(t_game *game)
 {
-	if (game->map.score_x[0] == -1 || game->map.score_x[1] == -1 || game->map.score_x[2] ==
-		-1 || game->map.score_y == -1)
+	if (game->map.score_x[0] == -1 || game->map.score_x[1] == -1
+		|| game->map.score_x[2] == -1 || game->map.score_y == -1)
 	{
 		w_error("Error: missing score in map\n");
 		free_game(game);
@@ -91,9 +91,9 @@ char	*add_counter(char *line)
 
 void	update_score(t_game *game, int count)
 {
-	int u;
-	int d;
-	int h;
+	int	u;
+	int	d;
+	int	h;
 
 	u = count % 10;
 	d = (count / 10) % 10;

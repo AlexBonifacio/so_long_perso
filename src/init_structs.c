@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:01:32 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/01 23:14:23 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/02 19:40:35 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ static void	init_game(t_game *game)
 	ft_memset(&game->ennemy, 0, sizeof(t_ennemy));
 	ft_memset(&game->exit, 0, sizeof(t_exit));
 }
-
-
 
 void	init_structs_null(t_game *game)
 {

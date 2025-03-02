@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:58:57 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/28 16:28:56 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/02 12:26:06 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,37 @@ void	free_map(t_game *game)
 	int	y;
 
 	y = 0;
-	if (game->map)
+	if (game->map.map)
 	{
 		y = 0;
-		while (game->map[y])
-			free(game->map[y++]);
-		free(game->map);
+		while (game->map.map[y])
+			free(game->map.map[y++]);
+		free(game->map.map);
 	}
 }
 
-void	ft_free_score(t_game *game)
+static void ft_free_tab_struct(void *mlx_ptr, void **tab, int size)
 {
-	int	i;
+	if (!tab || !mlx_ptr)
+		return ;
+	while (size--)
+		mlx_destroy_image(mlx_ptr, tab[size]);
+}
 
-	i = 0;
-	while (i < 10 && game->txtrs.score[i])
-	{
-		mlx_destroy_image(game->mlx_ptr, game->txtrs.score[i]);
-		game->txtrs.score[i] = NULL;
-		i++;
-	}
-	return ;
+static void free_game_helper(t_game *game)
+{
+		if (game->txtrs.wall)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.wall);
+		if (game->txtrs.ground)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.ground);
+		if (game->txtrs.exit)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.exit);
+		if (game->txtrs.exit_closed)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.exit_closed);
+		if (game->txtrs.player)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.player);
+		if (game->txtrs.gather)
+			mlx_destroy_image(game->mlx_ptr, game->txtrs.gather);
 }
 
 void	free_game(t_game *game)
@@ -51,18 +61,13 @@ void	free_game(t_game *game)
 	free_map(game);
 	if (game->mlx_ptr)
 	{
-		if (game->txtrs.wall)
-			mlx_destroy_image(game->mlx_ptr, game->txtrs.wall);
-		if (game->txtrs.ground)
-			mlx_destroy_image(game->mlx_ptr, game->txtrs.ground);
-		if (game->txtrs.exit)
-			mlx_destroy_image(game->mlx_ptr, game->txtrs.exit);
-		if (game->txtrs.player)
-			mlx_destroy_image(game->mlx_ptr, game->txtrs.player);
-		if (game->txtrs.gather)
-			mlx_destroy_image(game->mlx_ptr, game->txtrs.gather);
+		free_game_helper(game);
 		if (game->txtrs.score[0])
-			ft_free_score(game);
+			ft_free_tab_struct(game->mlx_ptr, (void **)game->txtrs.score, 
+			sizeof(game->txtrs.score) / sizeof(game->txtrs.score[0]));
+		if (game->txtrs.ennemy[0])
+			ft_free_tab_struct(game->mlx_ptr, (void **)game->txtrs.ennemy, 
+			sizeof(game->txtrs.ennemy) / sizeof(game->txtrs.ennemy[0]));
 		if (game->win_ptr)
 			mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 		mlx_destroy_display(game->mlx_ptr);

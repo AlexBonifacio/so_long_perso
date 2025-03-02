@@ -1,7 +1,7 @@
 /* XPM */
 static char *sprite_xpm[] = {
 "128 128 10 2",
-"AA c #000000",
+"AA c #255b29",
 "AB c #141B1B",
 "AC c #74A334",
 "AD c #ADBC3A",

@@ -10,8 +10,9 @@ MLX_DIR     = mlx
 # Recherche de tous les fichiers sources dans SRC_DIR
 SRC_FILES        = main.c count_in_map.c check_nb_assets.c free_game.c \
 				init_structs.c map_line_len.c load_digit.c score.c \
-				ft_print_error.c load_textures.c
-
+				ft_print_error.c load_textures.c load_textures2.c \
+				keys_handler.c load_ennemy.c so_long_utils.c read_map.c
+ 
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
@@ -33,7 +34,7 @@ $(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX_LIB) -o $(NAME)
 
 # Compilation de chaque fichier source en objet
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile includes/so_long.h
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 

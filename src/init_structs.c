@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:01:32 by abonifac          #+#    #+#             */
-/*   Updated: 2025/02/28 16:35:44 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/01 23:14:23 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ static void	init_player(t_player *player)
 static void	init_game(t_game *game)
 {
 	ft_memset(game, 0, sizeof(t_game));
+	ft_memset(&game->txtrs, 0, sizeof(t_txtrs));
+	ft_memset(&game->ennemy, 0, sizeof(t_ennemy));
+	ft_memset(&game->exit, 0, sizeof(t_exit));
 }
-static void init_textures(t_txtrs *txtrs)
-{
-	ft_memset(txtrs, 0, sizeof(t_txtrs));
-}
+
+
 
 void	init_structs_null(t_game *game)
 {
 	init_game(game);
-	init_textures(&game->txtrs);
 	init_player(&game->player);
 }

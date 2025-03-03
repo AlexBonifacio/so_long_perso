@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
 #include "mlx.h"
+#include "so_long.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
 
@@ -25,7 +25,7 @@ void	init_filenames(char *filenames[])
 
 void	load_ennemy(t_game *game, int w, int h)
 {
-	char	*filenames[4];	
+	char	*filenames[4];
 	int		i;
 
 	init_filenames(filenames);

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:01:32 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 19:40:35 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/04 00:10:45 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	init_game(t_game *game)
 {
 	ft_memset(game, 0, sizeof(t_game));
 	ft_memset(&game->txtrs, 0, sizeof(t_txtrs));
-	ft_memset(&game->ennemy, 0, sizeof(t_ennemy));
+	ft_memset(&game->ennemy, -1, sizeof(t_ennemy));
 	ft_memset(&game->exit, 0, sizeof(t_exit));
 }
 

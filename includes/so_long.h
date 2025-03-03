@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:43:43 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 19:09:27 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:49:29 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_game
 {
 	void		*mlx_ptr;
 	void		*win_ptr;
+	long		dynamic_sleep_time;
 	t_map		map;
 	t_ennemy	ennemy;
 	t_exit		exit;
@@ -71,6 +72,7 @@ typedef struct s_game
 }				t_game;
 
 # define TILE_S 128
+# define FRAME_RATE 24
 
 void			w_error(char *msg);
 int				count_in_map(t_game *game, char c);
@@ -108,7 +110,12 @@ void			*return_null_free(char **str);
 char			**load_map(char *filename);
 char			*add_counter(char *line);
 void			get_position(t_game *game, char c, int *x, int *y);
-void			get_map_size(t_game *game, int *width, int *height);
+void			get_map_size(t_game *game);
 int				animate_enemies(t_game *game);
+long long		current_time(void);
+int				measure_cpu_speed(void);
+long			init_dynamic_sleep(void);
+int				game_loop(t_game *game);
+
 
 #endif

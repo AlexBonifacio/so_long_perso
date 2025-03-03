@@ -6,30 +6,30 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 19:08:50 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 20:44:47 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:17:51 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
 #include "mlx.h"
-#include <unistd.h>
+#include "so_long.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
+#include <unistd.h>
 
 int	animate_enemies(t_game *game)
 {
-	static int		frame_counter;
-	static int		i;
+	static int	frame_counter;
+	static int	i;
 
 	frame_counter++;
 	if (i == 4)
 		i = 0;
-	if (frame_counter >= 10000)
+	if (frame_counter == FRAME_RATE)
 	{
 		frame_counter = 0;
 		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
-			game->txtrs.ennemy[i],
-			game->ennemy.x * TILE_S, game->ennemy.y * TILE_S);
+			game->txtrs.ennemy[i], game->ennemy.x * TILE_S, game->ennemy.y
+			* TILE_S);
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 22:43:11 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 19:54:40 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:48:55 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	get_position(t_game *game, char c, int *x, int *y)
 	}
 }
 
-void	get_map_size(t_game *game, int *width, int *height)
+void	get_map_size(t_game *game)
 {
 	int	x;
 	int	y;
@@ -76,9 +76,9 @@ void	get_map_size(t_game *game, int *width, int *height)
 	y = 0;
 	while (game->map.map[y])
 		y++;
-	*height = y * TILE_S;
+	game->map.height = y * TILE_S;
 	x = 0;
 	while (game->map.map[0][x])
 		x++;
-	*width = x * TILE_S;
+	game->map.width = x * TILE_S;
 }

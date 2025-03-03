@@ -6,13 +6,13 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 19:06:06 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 20:11:51 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/03 23:54:57 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
 #include "libft.h"
 #include "mlx.h"
+#include "so_long.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
 
@@ -51,16 +51,17 @@ void	check_move_exit(t_game *game, int old_x, int old_y)
 	}
 }
 
-void	moves(int key, t_game *game)
+int	moves(int key, t_game *game)
 {
 	if (key == XK_Left && check_move(game, 'l'))
-		game->player.x--;
+		return (game->player.x--);
 	else if (key == XK_Right && check_move(game, 'r'))
-		game->player.x++;
+		return (game->player.x++);
 	else if (key == XK_Up && check_move(game, 'u'))
-		game->player.y--;
+		return (game->player.y--);
 	else if (key == XK_Down && check_move(game, 'd'))
-		game->player.y++;
+		return (game->player.y++);
+	return (0);
 }
 
 void	player_move(int key, t_game *game)
@@ -71,18 +72,18 @@ void	player_move(int key, t_game *game)
 
 	old_x = game->player.x;
 	old_y = game->player.y;
-	moves(key, game);
+	if (moves(key, game))
+		count++;
+	ft_printf("Move count %i\n", count);
+	update_score(game, count);
 	if (game->map.map[game->player.y][game->player.x] == 'E')
 		check_move_exit(game, old_x, old_y);
 	if (game->map.map[game->player.y][game->player.x] == 'V')
 		ft_printf("💀 You died! 💀\n");
 	if (game->map.map[game->player.y][game->player.x] == 'V')
 		free_game(game);
-	count++;
-	update_score(game, count);
 	if (game->map.map[game->player.y][game->player.x] == 'C')
 		game->player.collected++;
-	ft_printf("Move count %i\n", count);
 	update_map(game, old_x, old_y);
 	if (game->player.collected == game->map.coins)
 	{

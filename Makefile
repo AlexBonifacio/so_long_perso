@@ -10,7 +10,8 @@ SRC_FILES        = main.c map_info.c free_game.c \
 				init_structs.c load_digit.c score.c \
 				load_textures.c load_textures2.c \
 				keys_handler.c load_ennemy.c so_long_utils.c read_map.c \
-				render.c so_long_utils2.c move.c ennemy_animation.c
+				render.c so_long_utils2.c move.c ennemy_animation.c \
+				set_fps_bonus.c
  
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:43:43 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/03 22:49:29 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/04 11:49:08 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ typedef struct s_map
 	char 	**map;
 	int		width;
 	int		height;
+	int		width_tiles;
+	int		height_tiles;
 	int 	coins;
 	int 	score_x[3];
 	int 	score_y;
@@ -116,6 +118,9 @@ long long		current_time(void);
 int				measure_cpu_speed(void);
 long			init_dynamic_sleep(void);
 int				game_loop(t_game *game);
+void			display_tab(t_game game);
+void			init_player(t_game *game);
+
 
 
 #endif

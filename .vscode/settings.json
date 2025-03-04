@@ -57,10 +57,10 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
-	"*.ejs": "html",
-	"mlx.h": "c",
-	"keysym.h": "c",
-	"libft.h": "c",
-	"time.h": "c"
-}
+    "*.ejs": "html",
+    "mlx.h": "c",
+    "keysym.h": "c",
+    "libft.h": "c",
+    "time.h": "c"
+  }
 }

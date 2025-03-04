@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:01:32 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/04 11:48:30 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:18:06 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,25 @@ void	init_structs_null(t_game *game)
 	
 }
 
-void	init_player(t_game *game)
+void	init_struct(t_game *game, int *x, int *y, char c)
 {
-	int	x;
-	int	y;
+	int	row;
+	int	col;
 	
-	x = 0;
-	while(game->map.map[x])
+	row = 0;
+	while(game->map.map[row])
 	{
-		y = 0;
-		while(game->map.map[x][y])
+		col = 0;
+		while(game->map.map[row][col])
 		{
-			if (game->map.map[x][y] == 'P')
+			if (game->map.map[row][col] == c)
 			{
-				game->player.x = x;
-				game->player.y = y;
+				*x = col;
+				*y = row;
 				return ;
 			}
-			y++;
+			col++;
 		}
-		x++;
+		row++;
 	}
 }

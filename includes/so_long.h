@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:43:43 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/04 11:49:08 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:27:28 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ typedef struct s_game
 # define FRAME_RATE 24
 
 void			w_error(char *msg);
-int				count_in_map(t_game *game, char c);
+int				count_in_map(char **map, char c);
 int				check_nb_assets(t_game *game);
 void			free_game(t_game *game);
 void			free_map(t_game *game);
@@ -119,8 +119,7 @@ int				measure_cpu_speed(void);
 long			init_dynamic_sleep(void);
 int				game_loop(t_game *game);
 void			display_tab(t_game game);
-void			init_player(t_game *game);
-
+void			init_struct(t_game *game, int *x, int *y, char c);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:19:22 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/03 23:42:17 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:23:07 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	main(int argc, char *argv[])
 	init_mlx(&game);
 	render(&game);
 	game.dynamic_sleep_time = init_dynamic_sleep();
-	game.map.coins = count_in_map(&game, 'C');
 	mlx_loop_hook(game.mlx_ptr, game_loop, &game);
 	mlx_hook(game.win_ptr, 17, 0, close_window, &game);
 	mlx_hook(game.win_ptr, KeyPress, KeyPressMask, key_handler, &game);

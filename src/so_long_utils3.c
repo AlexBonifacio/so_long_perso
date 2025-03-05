@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:43:19 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 13:48:30 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 17:45:40 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_arg(int argc, char *argv[])
 	if (argc != 2)
 	{
 		w_error("Error: wrong number of arguments\n");
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	while (argv[1][i])
 		i++;

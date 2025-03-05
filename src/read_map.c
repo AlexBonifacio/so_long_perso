@@ -6,40 +6,13 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 00:07:52 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 17:11:52 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:18:39 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "so_long.h"
 
-static void	*fill_temp(char *temp, char *line, int fd)
-{
-	char	*old_temp;
-
-	old_temp = NULL;
-	line = get_next_line(fd);
-	while (line != NULL)
-	{
-		old_temp = temp;
-		temp = ft_strjoin(temp, line);
-		free(old_temp);
-		free(line);
-		if (!temp)
-			return (NULL);
-		line = get_next_line(fd);
-	}
-	line = add_counter(temp);
-	if (!line)
-		return (return_null_free(&temp));
-	old_temp = temp;
-	temp = ft_strjoin(temp, line);
-	free(line);
-	free(old_temp);
-	if (!temp)
-		return (NULL);
-	return (temp);
-}
 
 void	check_line(char **map)
 {
@@ -81,26 +54,78 @@ void	check_double_n(char *temp)
 	}
 }
 
-char	**load_map(char *filename)
+char	*read_file_content(char *filename)
 {
 	int		fd;
 	char	*line;
+	char	*old_temp;
 	char	*temp;
-	char	**map;
 
 	fd = open(filename, O_RDONLY);
 	fd_error(fd);
-	line = NULL;
 	temp = ft_strdup("");
 	if (!temp)
 		return (NULL);
-	temp = fill_temp(temp, line, fd);
-	if (!temp)
-		return (return_null_free(&temp));
+	line = get_next_line(fd);
+	while (line != NULL)
+	{
+		old_temp = temp;
+		temp = ft_strjoin(temp, line);
+		free(old_temp);
+		free(line);
+		if (!temp)
+		{
+			close(fd);
+			return (NULL);
+		}
+		line = get_next_line(fd);
+	}
 	close(fd);
-	check_double_n(temp);
-	map = ft_split(temp, '\n');
-	free(temp);
+	return (temp);
+}
+
+int	get_max_len(char **map)
+{
+	int	i;
+	int	max;
+	int	len;
+
+	i = 0;
+	max = 0;
+	while (map[i])
+	{
+		len = ft_strlen(map[i]);
+		if (len > max)
+			max = len;
+		i++;
+	}
+	return (max);
+}
+
+char	**load_map(char *filename)
+{
+	char	*file_content;
+	char	**map;
+	char	*counter_line;
+	int		max_len;
+
+	file_content = read_file_content(filename);
+	if (!file_content)
+		return (NULL);
+	check_double_n(file_content);
+	map = ft_split(file_content, '\n');
+	free(file_content);
 	check_line(map);
+	if (!map)
+		return (NULL);
+	max_len = get_max_len(map);
+	// Créer la ligne compteur avec la largeur maximale
+	counter_line = create_counter_line(max_len);
+	if (!counter_line)
+	{
+		// Il faudrait libérer la map ici en cas d'erreur
+		return (NULL);
+	}
+	map = append_counter_line(map, counter_line);
 	return (map);
 }

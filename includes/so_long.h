@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:43:43 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 14:26:30 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:18:17 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void			free_tab(char **tab);
 void			*return_null_free(char **str);
 char			**load_map(char *filename);
 char			*add_counter(char *line);
+char			**add_counter_to_map(char **map);
 void			get_position(t_game *game, char c, int *x, int *y);
 void			get_map_size(t_game *game);
 int				animate_enemies(t_game *game);
@@ -135,5 +136,8 @@ void			map_walls_error(t_game *game);
 int				exit_valid(char **map, t_game *game);
 int				check_arg(int argc, char *argv[]);
 void			ft_free_tab_struct(void *mlx_ptr, void **tab, int size);
-
+char	*read_file_content(char *filename);
+int	get_max_len(char **map);
+char	*create_counter_line(int max_len);
+char	**append_counter_line(char **map, char *counter_line);
 #endif

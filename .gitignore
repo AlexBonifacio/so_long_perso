@@ -1,2 +1,7 @@
 solongsubject.pdf
 .history
+
+obj/
+*.o
+so_long
+*.a

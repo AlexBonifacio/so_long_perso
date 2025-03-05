@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 19:06:06 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/03 23:54:57 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 17:35:03 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 #include "so_long.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
+
+void	update_map(t_game *game, int old_x, int old_y)
+{
+	game->map.map[old_y][old_x] = '0';
+	game->map.map[game->player.y][game->player.x] = 'P';
+	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.ground,
+		old_x * TILE_S, old_y * TILE_S);
+	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.player,
+		game->player.x * TILE_S, game->player.y * TILE_S);
+	if (game->player.collected == game->map.coins)
+	{
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.exit,
+			game->exit.x * TILE_S, game->exit.y * TILE_S);
+		game->player.game_won = 1;
+	}
+}
 
 int	check_move(t_game *game, char c)
 {
@@ -73,8 +89,13 @@ void	player_move(int key, t_game *game)
 	old_x = game->player.x;
 	old_y = game->player.y;
 	if (moves(key, game))
-		count++;
-	ft_printf("Move count %i\n", count);
+	{
+		if (game->map.map[game->player.y][game->player.x] != 'E')
+		{
+			count++;
+			ft_printf("Move count %i\n", count);
+		}
+	}
 	update_score(game, count);
 	if (game->map.map[game->player.y][game->player.x] == 'E')
 		check_move_exit(game, old_x, old_y);
@@ -85,10 +106,4 @@ void	player_move(int key, t_game *game)
 	if (game->map.map[game->player.y][game->player.x] == 'C')
 		game->player.collected++;
 	update_map(game, old_x, old_y);
-	if (game->player.collected == game->map.coins)
-	{
-		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.exit,
-			game->exit.x * TILE_S, game->exit.y * TILE_S);
-		game->player.game_won = 1;
-	}
 }

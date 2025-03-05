@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 00:07:52 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 20:42:04 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 17:11:52 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,25 @@ void	check_line(char **map)
 		len_comp = ft_strlen(map[i]);
 		if (len != len_comp)
 		{
-			ft_printf("Line error\n");
+			w_error("Line error\n");
 			free_tab(map);
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+}
+
+void	check_double_n(char *temp)
+{
+	int	i;
+
+	i = 0;
+	while (temp[i + 1])
+	{
+		if (temp[i] == '\n' && temp[i + 1] == '\n')
+		{
+			w_error("Error: Double backslash\n");
+			free(temp);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -81,6 +98,7 @@ char	**load_map(char *filename)
 	if (!temp)
 		return (return_null_free(&temp));
 	close(fd);
+	check_double_n(temp);
 	map = ft_split(temp, '\n');
 	free(temp);
 	check_line(map);

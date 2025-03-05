@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:19:22 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 13:56:05 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 16:02:24 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 #include "so_long.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
-
-void	update_map(t_game *game, int old_x, int old_y)
-{
-	game->map.map[old_y][old_x] = '0';
-	game->map.map[game->player.y][game->player.x] = 'P';
-	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.ground,
-		old_x * TILE_S, old_y * TILE_S);
-	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->txtrs.player,
-		game->player.x * TILE_S, game->player.y * TILE_S);
-}
 
 void	init_mlx(t_game *game)
 {

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:35:58 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 16:38:51 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:57:28 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	load_digits(t_game *game)
 		if (!game->txtrs.score[i])
 		{
 			w_error("Error: fail to load score\n");
+			ft_free_tab_struct(game->mlx_ptr, (void **)game->txtrs.score, i);
 			free_game(game);
 			exit(EXIT_FAILURE);
 		}

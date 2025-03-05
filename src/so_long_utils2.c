@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 19:03:40 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 19:53:10 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 11:48:49 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,47 @@ int	map_line_len(char *line)
 		i++;
 	}
 	return (i);
+}
+
+int	count_in_map(char **map, char c)
+{
+	int	count;
+	int	i;
+	int	y;
+
+	count = 0;
+	i = 0;
+	y = 0;
+	while (map[i])
+	{
+		y = 0;
+		while (map[i][y])
+		{
+			if (map[i][y] == c)
+				count++;
+			y++;
+		}
+		i++;
+	}
+	return (count);
+}
+
+void	display_map(char **map)
+{
+	int	i;
+	int	y;
+
+	i = 0;
+	y = 0;
+	while (map[i])
+	{
+		y = 0;
+		while (map[i][y])
+		{
+			ft_printf("%c", map[i][y]);
+			y++;
+		}
+		i++;
+		ft_printf("\n");
+	}
 }

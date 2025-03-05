@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 19:41:39 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/02 19:46:40 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:57:08 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "so_long.h"
 #include <X11/X.h>
 #include <X11/keysym.h>
+#include "libft.h"
 
 void	init_filenames(char *filenames[])
 {
@@ -36,6 +37,7 @@ void	load_ennemy(t_game *game, int w, int h)
 				filenames[i], &w, &h);
 		if (!game->txtrs.ennemy[i])
 		{
+			ft_free_tab_struct(game->mlx_ptr, (void **)game->txtrs.ennemy, i);
 			w_error("Error: fail to load ennemy\n");
 			free_game(game);
 			exit(EXIT_FAILURE);

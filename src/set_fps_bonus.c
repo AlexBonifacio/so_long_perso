@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:59:49 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/03 22:23:23 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 11:49:10 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ long long	current_time(void)
 	Measure the CPU speed by counting the number of iterations in a second.
 	Once 1000ms have passed, return the number of iterations.
 */
+
 int	measure_cpu_speed(void)
 {
 	long long	start;

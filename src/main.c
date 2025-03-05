@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:19:22 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/04 19:23:07 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 13:56:05 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,7 @@ int	main(int argc, char *argv[])
 {
 	t_game	game;
 
-	if (argc != 2)
-	{
-		w_error("Error: wrong number of arguments\n");
-		return (EXIT_FAILURE);
-	}
+	check_arg(argc, argv);
 	init_structs_null(&game);
 	game.map.map = load_map(argv[1]);
 	map_checker(&game);

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:01:32 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/04 19:18:06 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:57:48 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,18 @@ static void	init_game(t_game *game)
 void	init_structs_null(t_game *game)
 {
 	init_game(game);
-	
 }
 
 void	init_struct(t_game *game, int *x, int *y, char c)
 {
 	int	row;
 	int	col;
-	
+
 	row = 0;
-	while(game->map.map[row])
+	while (game->map.map[row])
 	{
 		col = 0;
-		while(game->map.map[row][col])
+		while (game->map.map[row][col])
 		{
 			if (game->map.map[row][col] == c)
 			{
@@ -49,4 +48,12 @@ void	init_struct(t_game *game, int *x, int *y, char c)
 		}
 		row++;
 	}
+}
+
+void	init_map_struct(t_game *game)
+{
+	get_map_size(game);
+	game->map.width_tiles = game->map.width / TILE_S;
+	game->map.height_tiles = (game->map.height - TILE_S) / TILE_S;
+	find_score_position(game);
 }

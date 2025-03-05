@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 22:43:11 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/03 22:48:55 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:10:20 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	free_tab(char **tab)
 	int	i;
 
 	i = 0;
+	if (!tab)
+		return ;
 	while (tab[i])
 		free(tab[i++]);
 	free(tab);

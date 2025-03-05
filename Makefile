@@ -11,7 +11,8 @@ SRC_FILES        = main.c map_info.c free_game.c \
 				load_textures.c load_textures2.c \
 				keys_handler.c load_ennemy.c so_long_utils.c read_map.c \
 				render.c so_long_utils2.c move.c ennemy_animation.c \
-				set_fps_bonus.c
+				set_fps_bonus.c check_map_walls.c flood_fill.c \
+				so_long_utils3.c
  
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
@@ -24,18 +25,19 @@ CFLAGS      = -g3 -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_DIR) -I$(MLX_DIR)
 LIBFT       = $(LIBFT_DIR)/libft.a
 MLX_LIB     = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
-all: $(NAME)
+all: libft $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ)
-	@$(MAKE) -C $(MLX_DIR)
+libft:
+	$(MAKE) -C $(LIBFT_DIR) all
+
+$(NAME): $(OBJ) $(LIBFT)
+	$(MAKE) -C $(MLX_DIR)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX_LIB) -o $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile includes/so_long.h
-	@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile $(INC_DIR)/so_long.h
+	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR)
 
 clean:
 	rm -rf $(OBJ_DIR)
@@ -49,4 +51,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft 

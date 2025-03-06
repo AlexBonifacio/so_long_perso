@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:51:10 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 22:17:20 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/06 11:58:12 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,32 +63,27 @@ void	find_score_position(t_game *game)
 	check_score_init(game);
 }
 
+/*
+	"HDU1111...\n"
+	+1 to add '\0'
+*/
 char	*create_counter_line(int max_len)
 {
 	char	*counter;
 	int		i;
 
-	/*
-	** On crée une ligne compteur de la forme :
-	** "\nHDU1111...\n" avec max_len '1' après "HDU"
-	** La taille totale sera donc max_len + 3 (1 pour '\n' au début, 1 pour chaque lettre "H", "D", "U")
-	** et + 2 pour le '\n' final et le '\0'.
-	*/
-	counter = malloc(sizeof(char) * (max_len + 3));
+	counter = malloc(sizeof(char) * (max_len + 1));
 	if (!counter)
 		return (NULL);
-	counter[0] = '\n';
-	counter[1] = 'H';
-	counter[2] = 'D';
-	counter[3] = 'U';
-	i = 4;
-	while (i < max_len + 1)
+	counter[0] = 'H';
+	counter[1] = 'D';
+	counter[2] = 'U';
+	i = 3;
+	while (i < max_len)
 	{
 		counter[i] = '1';
 		i++;
 	}
-	counter[i] = '\n';  // Ajout du retour à la ligne final
-	i++;
 	counter[i] = '\0';
 	return (counter);
 }
@@ -99,14 +94,14 @@ char	**append_counter_line(char **map, char *counter_line)
 	int		size;
 	int		i;
 
-	/* Calculer la taille de la map */
 	size = 0;
 	while (map[size])
 		size++;
-	new_map = malloc(sizeof(char *) * (size + 2)); // +1 pour la nouvelle ligne et +1 pour le NULL final
+	new_map = malloc(sizeof(char *) * (size + 2));
 	if (!new_map)
 	{
-		// Il faudrait libérer map ici en cas d'erreur
+		free(counter_line);
+		free_tab(map);
 		return (NULL);
 	}
 	i = 0;
@@ -117,7 +112,6 @@ char	**append_counter_line(char **map, char *counter_line)
 	}
 	new_map[i++] = counter_line;
 	new_map[i] = NULL;
-	// On libère le tableau initial (mais pas les chaînes qu'il contient, elles sont transférées)
 	free(map);
 	return (new_map);
 }

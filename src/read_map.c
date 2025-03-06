@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 00:07:52 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 22:18:39 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:40:42 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	check_double_n(char *temp)
 	{
 		if (temp[i] == '\n' && temp[i + 1] == '\n')
 		{
-			w_error("Error: Double backslash\n");
+			w_error("Error: Horizontale space in map\n");
 			free(temp);
 			exit(EXIT_FAILURE);
 		}
@@ -86,20 +86,19 @@ char	*read_file_content(char *filename)
 
 int	get_max_len(char **map)
 {
+	return (ft_strlen(map[0]));
+}
+
+int	ft_strlen_n(const char *s, int min_len)
+{
 	int	i;
-	int	max;
-	int	len;
 
 	i = 0;
-	max = 0;
-	while (map[i])
-	{
-		len = ft_strlen(map[i]);
-		if (len > max)
-			max = len;
+	while (s[i] && s[i] != '\n')
 		i++;
-	}
-	return (max);
+	if (i < min_len)
+		return (0); // La chaîne est trop courte
+	return (1);
 }
 
 char	**load_map(char *filename)
@@ -110,8 +109,17 @@ char	**load_map(char *filename)
 	int		max_len;
 
 	file_content = read_file_content(filename);
-	if (!file_content)
-		return (NULL);
+	if (!file_content || !*file_content)
+	{
+		free(file_content);
+		exit(EXIT_FAILURE);
+	}
+	if (ft_strlen_n(file_content, 3) == 0)
+	{
+		w_error("Error: Line 1 is too short\n");
+		free(file_content);
+		exit(EXIT_FAILURE);
+	}
 	check_double_n(file_content);
 	map = ft_split(file_content, '\n');
 	free(file_content);
@@ -119,12 +127,11 @@ char	**load_map(char *filename)
 	if (!map)
 		return (NULL);
 	max_len = get_max_len(map);
-	// Créer la ligne compteur avec la largeur maximale
 	counter_line = create_counter_line(max_len);
 	if (!counter_line)
 	{
-		// Il faudrait libérer la map ici en cas d'erreur
-		return (NULL);
+		free_tab(map);
+		exit(EXIT_FAILURE);
 	}
 	map = append_counter_line(map, counter_line);
 	return (map);

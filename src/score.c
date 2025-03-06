@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:51:10 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 11:58:12 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/06 19:56:06 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,26 +67,6 @@ void	find_score_position(t_game *game)
 	"HDU1111...\n"
 	+1 to add '\0'
 */
-char	*create_counter_line(int max_len)
-{
-	char	*counter;
-	int		i;
-
-	counter = malloc(sizeof(char) * (max_len + 1));
-	if (!counter)
-		return (NULL);
-	counter[0] = 'H';
-	counter[1] = 'D';
-	counter[2] = 'U';
-	i = 3;
-	while (i < max_len)
-	{
-		counter[i] = '1';
-		i++;
-	}
-	counter[i] = '\0';
-	return (counter);
-}
 
 char	**append_counter_line(char **map, char *counter_line)
 {
@@ -115,7 +95,6 @@ char	**append_counter_line(char **map, char *counter_line)
 	free(map);
 	return (new_map);
 }
-
 
 void	update_score(t_game *game, int count)
 {

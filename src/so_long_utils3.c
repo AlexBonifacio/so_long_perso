@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:43:19 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 17:45:40 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/06 18:56:43 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,19 @@ int	check_arg(int argc, char *argv[])
 		w_error("Error: wrong file extension\n");
 		exit(EXIT_FAILURE);
 	}
+	return (1);
+}
+
+int	ft_strlen_n(const char *s)
+{
+	int	i;
+	int	min_len;
+
+	min_len = 3;
+	i = 0;
+	while (s[i] && s[i] != '\n')
+		i++;
+	if (i < min_len)
+		return (0);
 	return (1);
 }

@@ -11,7 +11,7 @@ SRC_FILES        = main.c map_info.c free_game.c init_structs.c \
 				keys_handler.c load_ennemy.c so_long_utils.c read_map.c \
 				render.c so_long_utils2.c move.c ennemy_animation.c \
 				set_fps_bonus.c check_map_walls.c flood_fill.c \
-				so_long_utils3.c
+				so_long_utils3.c read_map_utils.c
  
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
@@ -47,6 +47,17 @@ fclean: clean
 	rm -f $(NAME)
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 
+test: $(NAME)
+	-valgrind ./$(NAME) maps/flood_fill_line.ber
+	-valgrind ./$(NAME) maps/line_len_prob.ber
+	-valgrind ./$(NAME) maps/map_flood_fill.ber
+	-valgrind ./$(NAME) maps/map_invalid_char.ber
+	-valgrind ./$(NAME) maps/map_no_collect.ber
+	-valgrind ./$(NAME) maps/not_rect.ber
+	-valgrind ./$(NAME) maps/map_too_small.ber
+	-valgrind ./$(NAME) maps/line_1_empty.ber
+	-valgrind ./$(NAME) maps/file_empty.ber
+
 re: fclean all
 
-.PHONY: all clean fclean re libft 
+.PHONY: all clean fclean re libft test

@@ -47,16 +47,19 @@ fclean: clean
 	rm -f $(NAME)
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 
+MAPS_DIR ?= maps_err
+MAPS = $(wildcard $(MAPS_DIR)/*.ber)
+LOG_FILE = valgrind_log.txt
+
 test: $(NAME)
-	-valgrind ./$(NAME) maps/flood_fill_line.ber
-	-valgrind ./$(NAME) maps/line_len_prob.ber
-	-valgrind ./$(NAME) maps/map_flood_fill.ber
-	-valgrind ./$(NAME) maps/map_invalid_char.ber
-	-valgrind ./$(NAME) maps/map_no_collect.ber
-	-valgrind ./$(NAME) maps/not_rect.ber
-	-valgrind ./$(NAME) maps/map_too_small.ber
-	-valgrind ./$(NAME) maps/line_1_empty.ber
-	-valgrind ./$(NAME) maps/file_empty.ber
+	@echo "=== Démarrage des tests Valgrind ===" > $(LOG_FILE)
+	@for file in $(MAPS); do \
+		echo "Test sur $$file" >> $(LOG_FILE); \
+		valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1 ./$(NAME) $$file 2>&1 | grep -E "in use at exit|ERROR SUMMARY|Invalid read|Invalid write|uninitialised value|mismatched free|out of bounds" >> $(LOG_FILE); \
+		echo "-------------------------" >> $(LOG_FILE); \
+	done
+	@echo "=== Fin des tests Valgrind ===" >> $(LOG_FILE)
+	@cat $(LOG_FILE)
 
 re: fclean all
 

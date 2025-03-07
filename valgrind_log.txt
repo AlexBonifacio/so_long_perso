@@ -1,0 +1,226 @@
+=== Démarrage des tests Valgrind ===
+Test sur maps_err/duplicate_exit.ber
+==39442==     in use at exit: 0 bytes in 0 blocks
+==39442== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/duplicate_player.ber
+==39444==     in use at exit: 0 bytes in 0 blocks
+==39444== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/file_empty.ber
+==39467==     in use at exit: 0 bytes in 0 blocks
+==39467== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/flood_fill_line.ber
+==39481==     in use at exit: 0 bytes in 0 blocks
+==39481== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/line_1_empty.ber
+==39484==     in use at exit: 0 bytes in 0 blocks
+==39484== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/line_len_prob.ber
+==39486==     in use at exit: 0 bytes in 0 blocks
+==39486== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/map_flood_fill.ber
+==39500==     in use at exit: 0 bytes in 0 blocks
+==39500== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/map_invalid_char.ber
+==39502==     in use at exit: 0 bytes in 0 blocks
+==39502== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/map_no_collect.ber
+==39504==     in use at exit: 0 bytes in 0 blocks
+==39504== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/map_not_rect.ber
+==39514==     in use at exit: 0 bytes in 0 blocks
+==39514== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/map_too_small.ber
+==39516==     in use at exit: 0 bytes in 0 blocks
+==39516== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_exit.ber
+==39518==     in use at exit: 0 bytes in 0 blocks
+==39518== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_object.ber
+==39520==     in use at exit: 0 bytes in 0 blocks
+==39520== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_player.ber
+==39522==     in use at exit: 0 bytes in 0 blocks
+==39522== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular1.ber
+==39524==     in use at exit: 0 bytes in 0 blocks
+==39524== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular2.ber
+==39526==     in use at exit: 0 bytes in 0 blocks
+==39526== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular3.ber
+==39528==     in use at exit: 0 bytes in 0 blocks
+==39528== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular4.ber
+==39530==     in use at exit: 0 bytes in 0 blocks
+==39530== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular5.ber
+==39532==     in use at exit: 0 bytes in 0 blocks
+==39532== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular6.ber
+==39534==     in use at exit: 0 bytes in 0 blocks
+==39534== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular7.ber
+==39536==     in use at exit: 0 bytes in 0 blocks
+==39536== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular8.ber
+==39538==     in use at exit: 0 bytes in 0 blocks
+==39538== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular9.ber
+==39540==     in use at exit: 0 bytes in 0 blocks
+==39540== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_rectangular.ber
+==39542==     in use at exit: 0 bytes in 0 blocks
+==39542== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road10.ber
+==39544==     in use at exit: 0 bytes in 0 blocks
+==39544== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road11.ber
+==39546==     in use at exit: 0 bytes in 0 blocks
+==39546== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road12.ber
+==39548==     in use at exit: 0 bytes in 0 blocks
+==39548== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road13.ber
+==39550==     in use at exit: 0 bytes in 0 blocks
+==39550== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road14.ber
+==39552==     in use at exit: 0 bytes in 0 blocks
+==39552== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road15.ber
+==39554==     in use at exit: 0 bytes in 0 blocks
+==39554== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road1.ber
+==39556==     in use at exit: 0 bytes in 0 blocks
+==39556== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road2.ber
+==39558==     in use at exit: 0 bytes in 0 blocks
+==39558== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road3.ber
+==39560==     in use at exit: 0 bytes in 0 blocks
+==39560== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road4.ber
+==39562==     in use at exit: 0 bytes in 0 blocks
+==39562== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road5.ber
+==39564==     in use at exit: 0 bytes in 0 blocks
+==39564== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road6.ber
+==39566==     in use at exit: 0 bytes in 0 blocks
+==39566== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road7.ber
+==39568==     in use at exit: 0 bytes in 0 blocks
+==39568== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road8.ber
+==39570==     in use at exit: 0 bytes in 0 blocks
+==39570== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road9.ber
+==39572==     in use at exit: 0 bytes in 0 blocks
+==39572== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_valid_road.ber
+==39574==     in use at exit: 0 bytes in 0 blocks
+==39574== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls1.ber
+==39576==     in use at exit: 0 bytes in 0 blocks
+==39576== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls2.ber
+==39578==     in use at exit: 0 bytes in 0 blocks
+==39578== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls3.ber
+==39580==     in use at exit: 0 bytes in 0 blocks
+==39580== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls4.ber
+==39582==     in use at exit: 0 bytes in 0 blocks
+==39582== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls5.ber
+==39584==     in use at exit: 0 bytes in 0 blocks
+==39584== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls6.ber
+==39586==     in use at exit: 0 bytes in 0 blocks
+==39586== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls7.ber
+==39588==     in use at exit: 0 bytes in 0 blocks
+==39588== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls8.ber
+==39590==     in use at exit: 0 bytes in 0 blocks
+==39590== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls9.ber
+==39592==     in use at exit: 0 bytes in 0 blocks
+==39592== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/no_walls.ber
+==39594==     in use at exit: 0 bytes in 0 blocks
+==39594== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/wrong_chars1.ber
+==39596==     in use at exit: 0 bytes in 0 blocks
+==39596== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/wrong_chars2.ber
+==39598==     in use at exit: 0 bytes in 0 blocks
+==39598== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/wrong_chars3.ber
+==39600==     in use at exit: 0 bytes in 0 blocks
+==39600== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/wrong_chars4.ber
+==39602==     in use at exit: 0 bytes in 0 blocks
+==39602== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/wrong_chars5.ber
+==39604==     in use at exit: 0 bytes in 0 blocks
+==39604== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+Test sur maps_err/wrong_chars.ber
+==39606==     in use at exit: 0 bytes in 0 blocks
+==39606== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-------------------------
+=== Fin des tests Valgrind ===

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:01:32 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 14:57:48 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:21:23 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,8 @@ void	init_map_struct(t_game *game)
 	get_map_size(game);
 	game->map.width_tiles = game->map.width / TILE_S;
 	game->map.height_tiles = (game->map.height - TILE_S) / TILE_S;
+	init_struct(game, &game->player.x, &game->player.y, 'P');
+	init_struct(game, &game->exit.x, &game->exit.y, 'E');
+	game->map.coins = count_in_map(game->map.map, 'C');
 	find_score_position(game);
 }

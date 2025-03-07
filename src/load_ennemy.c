@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 19:41:39 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 19:44:53 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:19:02 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	init_filenames(char *filenames[])
 
 void	load_ennemy(t_game *game, int w, int h)
 {
-	char	*filenames[4];
+	char	*filenames[ENNEMY_FRAMES];
 	int		i;
 
 	init_filenames(filenames);
 	i = 0;
-	while (i < 4)
+	while (i < ENNEMY_FRAMES)
 	{
 		game->txtrs.ennemy[i] = mlx_xpm_file_to_image(game->mlx_ptr,
 				filenames[i], &w, &h);

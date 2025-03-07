@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 19:08:50 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/03 22:17:51 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:19:40 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	animate_enemies(t_game *game)
 	static int	i;
 
 	frame_counter++;
-	if (i == 4)
+	if (i == ENNEMY_FRAMES)
 		i = 0;
 	if (frame_counter == FRAME_RATE)
 	{

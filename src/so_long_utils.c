@@ -6,17 +6,18 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 22:43:11 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 14:10:20 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 19:29:14 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdlib.h>
 
-void	fd_error(int fd)
+void	fd_error(int fd, char *string)
 {
 	if (fd < 0)
 	{
+		free(string);
 		w_error("Error: fail to open the map\n");
 		exit(EXIT_FAILURE);
 	}

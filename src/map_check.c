@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_info.c                                         :+:      :+:    :+:   */
+/*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:06 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 11:46:52 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 19:44:50 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,10 @@ void	check_map_size(t_game *game)
 	}
 }
 
-void	check_map_rectangle(t_game *game)
+int	is_valid_char(char c)
 {
-	if (game->map.width_tiles == game->map.height_tiles)
-	{
-		w_error("Error: map is not a rectangle\n");
-		free_map(game);
-		exit(EXIT_FAILURE);
-	}
+	return (c == '0' || c == 'E' || c == 'C' || c == '1' || c == 'P'
+		|| c == 'V');
 }
 
 void	check_invalid_char(t_game *game)
@@ -88,7 +84,6 @@ void	map_checker(t_game *game)
 	init_map_struct(game);
 	check_map_size(game);
 	check_nb_assets(game);
-	check_map_rectangle(game);
 	check_map_walls(game);
 	check_invalid_char(game);
 	flood_fill(game);

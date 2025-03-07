@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:43:43 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 19:34:33 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:18:36 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ typedef struct s_game
 
 # define TILE_S 128
 # define FRAME_RATE 30
+# define LOSE_COUNTER 999
+# define ENNEMY_FRAMES 4
 
 void			w_error(char *msg);
 int				count_in_map(char **map, char c);
@@ -106,7 +108,7 @@ void			load_exit_closed(t_game *game, int w, int h);
 int				close_window(t_game *game);
 int				key_handler(int key, t_game *game);
 void			load_ennemy(t_game *game, int w, int h);
-void			fd_error(int fd);
+void			fd_error(int fd, char *string);
 void			free_tab(char **tab);
 void			*return_null_free(char **str);
 char			**load_map(char *filename);
@@ -128,7 +130,6 @@ void			display_map(char **map);
 int				is_valid_char(char c);
 void			check_invalid_char(t_game *game);
 void			check_map_size(t_game *game);
-void			check_map_rectangle(t_game *game);
 void			check_map_walls(t_game *game);
 void			map_walls_horiz(t_game *game);
 void			map_walls_vert(t_game *game);

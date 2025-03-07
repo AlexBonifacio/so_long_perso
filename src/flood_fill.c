@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:00:03 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 19:42:25 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:51:58 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,12 @@ char	**copy_map(char **map)
 
 void	flood_fill_recursive(t_game *game, char **map, int x, int y)
 {
-	int	count;
-
-	count = 0;
 	if (x < 1 || y < 1 || x >= game->map.width_tiles
 		|| y >= game->map.height_tiles)
 		return ;
 	if (map[y][x] == '1' || map[y][x] == 'V' || map[y][x] == 'E'
 		|| map[y][x] == 'G')
 		return ;
-	if (map[y][x] == 'C')
-		count++;
 	map[y][x] = 'G';
 	flood_fill_recursive(game, map, x + 1, y);
 	flood_fill_recursive(game, map, x - 1, y);
@@ -84,9 +79,6 @@ void	flood_fill(t_game *game)
 {
 	char	**new_map;
 
-	init_struct(game, &game->player.x, &game->player.y, 'P');
-	init_struct(game, &game->exit.x, &game->exit.y, 'E');
-	game->map.coins = count_in_map(game->map.map, 'C');
 	new_map = copy_map(game->map.map);
 	if (!new_map)
 	{

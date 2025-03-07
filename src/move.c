@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 19:06:06 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/05 17:35:03 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:15:54 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,15 @@ int	moves(int key, t_game *game)
 	return (0);
 }
 
+int	ft_loser(t_game *game, int count)
+{
+	if (count == LOSE_COUNTER)
+	{
+		ft_printf("You losed\n");
+		free_game(game);
+	}
+	return (1);
+}
 void	player_move(int key, t_game *game)
 {
 	static int	count;
@@ -106,4 +115,5 @@ void	player_move(int key, t_game *game)
 	if (game->map.map[game->player.y][game->player.x] == 'C')
 		game->player.collected++;
 	update_map(game, old_x, old_y);
+	ft_loser(game, (int)count);
 }

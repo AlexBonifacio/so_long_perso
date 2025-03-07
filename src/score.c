@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 14:51:10 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 19:56:06 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:07:16 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,32 @@ void	check_score_init(t_game *game)
 
 void	find_score_position(t_game *game)
 {
-	int	x;
-	int	y;
+	// int	x;
+	// int	y;
 
 	init_score_position(game);
-	y = 0;
-	while (game->map.map[y])
-	{
-		x = 0;
-		while (game->map.map[y][x])
-		{
-			if (game->map.map[y][x] == 'H')
-			{
-				game->map.score_x[0] = x;
-				game->map.score_y = y;
-			}
-			else if (game->map.map[y][x] == 'D')
-				game->map.score_x[1] = x;
-			else if (game->map.map[y][x] == 'U')
-				game->map.score_x[2] = x;
-			x++;
-		}
-		y++;
-	}
+	get_position(game, 'H', &game->map.score_x[0], &game->map.score_y);
+	get_position(game, 'D', &game->map.score_x[1], &game->map.score_y);
+	get_position(game, 'U', &game->map.score_x[2], &game->map.score_y);
+	// y = 0;
+	// while (game->map.map[y])
+	// {
+	// 	x = 0;
+	// 	while (game->map.map[y][x])
+	// 	{
+	// 		if (game->map.map[y][x] == 'H')
+	// 		{
+	// 			game->map.score_x[0] = x;
+	// 			game->map.score_y = y;
+	// 		}
+	// 		else if (game->map.map[y][x] == 'D')
+	// 			game->map.score_x[1] = x;
+	// 		else if (game->map.map[y][x] == 'U')
+	// 			game->map.score_x[2] = x;
+	// 		x++;
+	// 	}
+	// 	y++;
+	// }
 	check_score_init(game);
 }
 
@@ -95,7 +98,11 @@ char	**append_counter_line(char **map, char *counter_line)
 	free(map);
 	return (new_map);
 }
-
+/*
+	U-nit
+	D-ecimal
+	H-undredth
+*/
 void	update_score(t_game *game, int count)
 {
 	int	u;

@@ -6,18 +6,14 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:43:19 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 18:56:43 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:11:58 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stddef.h>
 
-int	is_valid_char(char c)
-{
-	return (c == '0' || c == 'E' || c == 'C' || c == '1' || c == 'P'
-		|| c == 'V');
-}
+
 
 int	check_arg(int argc, char *argv[])
 {
@@ -53,3 +49,4 @@ int	ft_strlen_n(const char *s)
 		return (0);
 	return (1);
 }
+

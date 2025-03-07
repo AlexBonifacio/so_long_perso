@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 00:07:52 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 19:55:36 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/07 19:36:21 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ char	*read_file_content(char *filename)
 	char	*old_temp;
 	char	*temp;
 
-	fd = open(filename, O_RDONLY);
-	fd_error(fd);
 	temp = ft_strdup("");
 	if (!temp)
 		return (NULL);
+	fd = open(filename, O_RDONLY);
+	fd_error(fd, temp);
 	line = get_next_line(fd);
 	while (line != NULL)
 	{

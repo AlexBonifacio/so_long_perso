@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:43:43 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/07 20:18:36 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/08 18:38:53 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef struct s_game
 # define FRAME_RATE 30
 # define LOSE_COUNTER 999
 # define ENNEMY_FRAMES 4
+# define SCORE_FRAMES 10
 
 void			w_error(char *msg);
 int				count_in_map(char **map, char c);
@@ -145,5 +146,6 @@ int				ft_strlen_n(const char *s);
 void			check_double_n(char *temp);
 void			check_line(char **map);
 void			ft_strlen_n_error(char *file_content);
+int				ft_loser(t_game *game, int count);
 
 #endif

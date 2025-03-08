@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:35:58 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 19:44:10 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/08 18:39:46 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	load_digits(t_game *game)
 	int		w;
 	int		h;
 	int		i;
-	char	*filenames[10];
+	char	*filenames[SCORE_FRAMES];
 
 	init_filenames(filenames);
 	i = 0;
-	while (i < 10)
+	while (i < SCORE_FRAMES)
 	{
 		game->txtrs.score[i] = mlx_xpm_file_to_image(game->mlx_ptr,
 				filenames[i], &w, &h);

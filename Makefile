@@ -44,23 +44,23 @@ clean:
 	@$(MAKE) -C $(MLX_DIR) clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) 
 	@$(MAKE) -C $(LIBFT_DIR) fclean
-
-MAPS_DIR ?= maps_err
-MAPS = $(wildcard $(MAPS_DIR)/*.ber)
-LOG_FILE = valgrind_log.txt
-
-test: $(NAME)
-	@echo "=== Démarrage des tests Valgrind ===" > $(LOG_FILE)
-	@for file in $(MAPS); do \
-		echo "Test sur $$file" >> $(LOG_FILE); \
-		valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1 --track-fds=all ./$(NAME) $$file 2>&1 | grep -v -E "For lists|Memcheck|Open file descriptor|For list of|Memcheck,|Using|<inherited|Copyright" >> $(LOG_FILE); \
-		echo "-------------------------" >> $(LOG_FILE); \
-	done
-	@echo "=== Fin des tests Valgrind ===" >> $(LOG_FILE)
-	@cat $(LOG_FILE)
 
 re: fclean all
 
 .PHONY: all clean fclean re libft test
+
+#MAPS_DIR ?= maps_err
+#MAPS = $(wildcard $(MAPS_DIR)/*.ber)
+#LOG_FILE = valgrind_log.txt
+#
+#test: $(NAME)
+#	@echo "=== Démarrage des tests Valgrind ===" > $(LOG_FILE)
+#	@for file in $(MAPS); do \
+#		echo "Test sur $$file" >> $(LOG_FILE); \
+#		valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1 --track-fds=all ./$(NAME) $$file 2>&1 | grep -v -E "For lists|Memcheck|Open file descriptor|For list of|Memcheck,|Using|<inherited|Copyright" >> $(LOG_FILE); \
+#		echo "-------------------------" >> $(LOG_FILE); \
+#	done
+#	@echo "=== Fin des tests Valgrind ===" >> $(LOG_FILE)
+#	@cat $(LOG_FILE)

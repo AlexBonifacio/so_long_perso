@@ -1,680 +1,376 @@
 === Démarrage des tests Valgrind ===
 Test sur maps_valid/map1.ber
-==31478== Command: ./so_long maps_valid/map1.ber
-==31478== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-Move count 17
-Move count 18
-Move count 19
-Move count 20
-Move count 21
-Move count 22
-Move count 23
-Move count 24
-Move count 25
-Move count 26
-Move count 27
-Move count 28
-Move count 29
-Move count 30
-Move count 31
-Move count 32
-Move count 33
-Move count 34
-Move count 35
-Move count 36
-Move count 37
-Move count 38
-Move count 39
-Move count 40
-Move count 41
-Move count 42
-Move count 43
-Move count 44
-🎊 Congratulation ! You won ! 🎊
-==31478== 
-==31478== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==31478== 
-==31478== 
-==31478== 
-==31478== 
-==31478== HEAP SUMMARY:
-==31478==     in use at exit: 0 bytes in 0 blocks
-==31478==   total heap usage: 2,532 allocs, 2,532 frees, 4,425,398 bytes allocated
-==31478== 
-==31478== All heap blocks were freed -- no leaks are possible
-==31478== 
-==31478== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152811== Command: ./so_long maps_valid/map1.ber
+==152811== 
+==152811== 
+==152811== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152811== 
+==152811== Open AF_UNIX socket 45: <unknown>
+==152811== 
+==152811== 
+==152811== 
+==152811== 
+==152811== 
+==152811== 
+==152811== 
+==152811== HEAP SUMMARY:
+==152811==     in use at exit: 0 bytes in 0 blocks
+==152811==   total heap usage: 1,382 allocs, 1,382 frees, 4,401,410 bytes allocated
+==152811== 
+==152811== All heap blocks were freed -- no leaks are possible
+==152811== 
+==152811== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/map.ber
-==31486== Command: ./so_long maps_valid/map.ber
-==31486== 
-Move count 1
-Move count 2
-🎊 Congratulation ! You won ! 🎊
-==31486== 
-==31486== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==31486== 
-==31486== 
-==31486== 
-==31486== 
-==31486== HEAP SUMMARY:
-==31486==     in use at exit: 0 bytes in 0 blocks
-==31486==   total heap usage: 1,937 allocs, 1,937 frees, 4,450,971 bytes allocated
-==31486== 
-==31486== All heap blocks were freed -- no leaks are possible
-==31486== 
-==31486== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152841== Command: ./so_long maps_valid/map.ber
+==152841== 
+==152841== 
+==152841== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152841== 
+==152841== Open AF_UNIX socket 45: <unknown>
+==152841== 
+==152841== 
+==152841== 
+==152841== 
+==152841== 
+==152841== 
+==152841== 
+==152841== HEAP SUMMARY:
+==152841==     in use at exit: 0 bytes in 0 blocks
+==152841==   total heap usage: 1,943 allocs, 1,943 frees, 4,450,847 bytes allocated
+==152841== 
+==152841== All heap blocks were freed -- no leaks are possible
+==152841== 
+==152841== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok10.ber
-==31493== Command: ./so_long maps_valid/ok10.ber
-==31493== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-Move count 17
-Move count 18
-Move count 19
-Move count 20
-Move count 21
-Move count 22
-Move count 23
-Move count 24
-Move count 25
-Move count 26
-Move count 27
-Move count 28
-Move count 29
-Move count 30
-Move count 31
-Move count 32
-Move count 33
-Move count 34
-Move count 35
-Move count 36
-Move count 37
-Move count 38
-Move count 39
-Move count 40
-Move count 41
-🎊 Congratulation ! You won ! 🎊
-==31493== 
-==31493== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==31493== 
-==31493== 
-==31493== 
-==31493== 
-==31493== HEAP SUMMARY:
-==31493==     in use at exit: 0 bytes in 0 blocks
-==31493==   total heap usage: 2,689 allocs, 2,689 frees, 4,439,314 bytes allocated
-==31493== 
-==31493== All heap blocks were freed -- no leaks are possible
-==31493== 
-==31493== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152868== Command: ./so_long maps_valid/ok10.ber
+==152868== 
+==152868== 
+==152868== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152868== 
+==152868== Open AF_UNIX socket 45: <unknown>
+==152868== 
+==152868== 
+==152868== 
+==152868== 
+==152868== 
+==152868== 
+==152868== 
+==152868== HEAP SUMMARY:
+==152868==     in use at exit: 0 bytes in 0 blocks
+==152868==   total heap usage: 1,656 allocs, 1,656 frees, 4,413,258 bytes allocated
+==152868== 
+==152868== All heap blocks were freed -- no leaks are possible
+==152868== 
+==152868== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok11.ber
-==31500== Command: ./so_long maps_valid/ok11.ber
-==31500== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-Move count 17
-Move count 18
-Move count 19
-Move count 20
-Move count 21
-Move count 22
-🎊 Congratulation ! You won ! 🎊
-==31500== 
-==31500== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==31500== 
-==31500== 
-==31500== 
-==31500== 
-==31500== HEAP SUMMARY:
-==31500==     in use at exit: 0 bytes in 0 blocks
-==31500==   total heap usage: 1,958 allocs, 1,958 frees, 4,402,248 bytes allocated
-==31500== 
-==31500== All heap blocks were freed -- no leaks are possible
-==31500== 
-==31500== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152884== Command: ./so_long maps_valid/ok11.ber
+==152884== 
+==152884== 
+==152884== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152884== 
+==152884== Open AF_UNIX socket 45: <unknown>
+==152884== 
+==152884== 
+==152884== 
+==152884== 
+==152884== 
+==152884== 
+==152884== 
+==152884== HEAP SUMMARY:
+==152884==     in use at exit: 0 bytes in 0 blocks
+==152884==   total heap usage: 1,151 allocs, 1,151 frees, 4,382,056 bytes allocated
+==152884== 
+==152884== All heap blocks were freed -- no leaks are possible
+==152884== 
+==152884== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok12.ber
-==32045== Command: ./so_long maps_valid/ok12.ber
-==32045== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-Move count 17
-Move count 18
-🎊 Congratulation ! You won ! 🎊
-==32045== 
-==32045== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32045== 
-==32045== 
-==32045== 
-==32045== 
-==32045== HEAP SUMMARY:
-==32045==     in use at exit: 0 bytes in 0 blocks
-==32045==   total heap usage: 1,732 allocs, 1,732 frees, 4,396,402 bytes allocated
-==32045== 
-==32045== All heap blocks were freed -- no leaks are possible
-==32045== 
-==32045== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152887== Command: ./so_long maps_valid/ok12.ber
+==152887== 
+==152887== 
+==152887== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152887== 
+==152887== Open AF_UNIX socket 45: <unknown>
+==152887== 
+==152887== 
+==152887== 
+==152887== 
+==152887== 
+==152887== 
+==152887== 
+==152887== HEAP SUMMARY:
+==152887==     in use at exit: 0 bytes in 0 blocks
+==152887==   total heap usage: 1,145 allocs, 1,145 frees, 4,381,534 bytes allocated
+==152887== 
+==152887== All heap blocks were freed -- no leaks are possible
+==152887== 
+==152887== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok13.ber
-==32052== Command: ./so_long maps_valid/ok13.ber
-==32052== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-Move count 17
-Move count 18
-🎊 Congratulation ! You won ! 🎊
-==32052== 
-==32052== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32052== 
-==32052== 
-==32052== 
-==32052== 
-==32052== HEAP SUMMARY:
-==32052==     in use at exit: 0 bytes in 0 blocks
-==32052==   total heap usage: 1,691 allocs, 1,691 frees, 4,393,698 bytes allocated
-==32052== 
-==32052== All heap blocks were freed -- no leaks are possible
-==32052== 
-==32052== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152889== Command: ./so_long maps_valid/ok13.ber
+==152889== 
+==152889== 
+==152889== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152889== 
+==152889== Open AF_UNIX socket 45: <unknown>
+==152889== 
+==152889== 
+==152889== 
+==152889== 
+==152889== 
+==152889== 
+==152889== 
+==152889== HEAP SUMMARY:
+==152889==     in use at exit: 0 bytes in 0 blocks
+==152889==   total heap usage: 1,202 allocs, 1,202 frees, 4,386,474 bytes allocated
+==152889== 
+==152889== All heap blocks were freed -- no leaks are possible
+==152889== 
+==152889== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok14.ber
-==32069== Command: ./so_long maps_valid/ok14.ber
-==32069== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-Move count 17
-Move count 18
-Move count 19
-Move count 20
-🎊 Congratulation ! You won ! 🎊
-==32069== 
-==32069== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32069== 
-==32069== 
-==32069== 
-==32069== 
-==32069== HEAP SUMMARY:
-==32069==     in use at exit: 0 bytes in 0 blocks
-==32069==   total heap usage: 2,132 allocs, 2,132 frees, 4,429,694 bytes allocated
-==32069== 
-==32069== All heap blocks were freed -- no leaks are possible
-==32069== 
-==32069== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
--------------------------
-Test sur maps_valid/ok15.ber
-==32076== Command: ./so_long maps_valid/ok15.ber
-==32076== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-Move count 17
-Move count 18
-Move count 19
-Move count 20
-Move count 21
-Move count 22
-Move count 23
-Move count 24
-Move count 25
-Move count 26
-Move count 27
-Move count 28
-Move count 29
-Move count 30
-Move count 31
-Move count 32
-Move count 33
-Move count 34
-Move count 35
-Move count 36
-Move count 37
-Move count 38
-Move count 39
-Move count 40
-Move count 41
-Move count 42
-Move count 43
-Move count 44
-Move count 45
-Move count 46
-Move count 47
-Move count 48
-Move count 49
-Move count 50
-Move count 51
-Move count 52
-Move count 53
-Move count 54
-Move count 55
-Move count 56
-Move count 57
-Move count 58
-Move count 59
-Move count 60
-Move count 61
-Move count 62
-Move count 63
-Move count 64
-Move count 65
-Move count 66
-Move count 67
-Move count 68
-🎊 Congratulation ! You won ! 🎊
-==32076== 
-==32076== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32076== 
-==32076== 
-==32076== 
-==32076== 
-==32076== HEAP SUMMARY:
-==32076==     in use at exit: 0 bytes in 0 blocks
-==32076==   total heap usage: 3,393 allocs, 3,393 frees, 4,449,666 bytes allocated
-==32076== 
-==32076== All heap blocks were freed -- no leaks are possible
-==32076== 
-==32076== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152906== Command: ./so_long maps_valid/ok14.ber
+==152906== 
+==152906== 
+==152906== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152906== 
+==152906== Open AF_UNIX socket 45: <unknown>
+==152906== 
+==152906== 
+==152906== 
+==152906== 
+==152906== 
+==152906== 
+==152906== 
+==152906== HEAP SUMMARY:
+==152906==     in use at exit: 0 bytes in 0 blocks
+==152906==   total heap usage: 1,556 allocs, 1,556 frees, 4,415,366 bytes allocated
+==152906== 
+==152906== All heap blocks were freed -- no leaks are possible
+==152906== 
+==152906== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok1.ber
-==32101== Command: ./so_long maps_valid/ok1.ber
-==32101== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-Move count 17
-Move count 18
-Move count 19
-Move count 20
-Move count 21
-Move count 22
-Move count 23
-Move count 24
-Move count 25
-Move count 26
-Move count 27
-Move count 28
-Move count 29
-Move count 30
-Move count 31
-Move count 32
-🎊 Congratulation ! You won ! 🎊
-==32101== 
-==32101== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32101== 
-==32101== 
-==32101== 
-==32101== 
-==32101== HEAP SUMMARY:
-==32101==     in use at exit: 0 bytes in 0 blocks
-==32101==   total heap usage: 2,218 allocs, 2,218 frees, 4,422,516 bytes allocated
-==32101== 
-==32101== All heap blocks were freed -- no leaks are possible
-==32101== 
-==32101== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152909== Command: ./so_long maps_valid/ok1.ber
+==152909== 
+==152909== 
+==152909== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152909== 
+==152909== Open AF_UNIX socket 45: <unknown>
+==152909== 
+==152909== 
+==152909== 
+==152909== 
+==152909== 
+==152909== 
+==152909== 
+==152909== HEAP SUMMARY:
+==152909==     in use at exit: 0 bytes in 0 blocks
+==152909==   total heap usage: 1,387 allocs, 1,387 frees, 4,401,912 bytes allocated
+==152909== 
+==152909== All heap blocks were freed -- no leaks are possible
+==152909== 
+==152909== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok2.ber
-==32109== Command: ./so_long maps_valid/ok2.ber
-==32109== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-🎊 Congratulation ! You won ! 🎊
-==32109== 
-==32109== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32109== 
-==32109== 
-==32109== 
-==32109== 
-==32109== HEAP SUMMARY:
-==32109==     in use at exit: 0 bytes in 0 blocks
-==32109==   total heap usage: 1,174 allocs, 1,174 frees, 4,378,271 bytes allocated
-==32109== 
-==32109== All heap blocks were freed -- no leaks are possible
-==32109== 
-==32109== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152916== Command: ./so_long maps_valid/ok2.ber
+==152916== 
+==152916== 
+==152916== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152916== 
+==152916== Open AF_UNIX socket 45: <unknown>
+==152916== 
+==152916== 
+==152916== 
+==152916== 
+==152916== 
+==152916== 
+==152916== 
+==152916== HEAP SUMMARY:
+==152916==     in use at exit: 0 bytes in 0 blocks
+==152916==   total heap usage: 1,062 allocs, 1,062 frees, 4,375,055 bytes allocated
+==152916== 
+==152916== All heap blocks were freed -- no leaks are possible
+==152916== 
+==152916== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok3.ber
-==32116== Command: ./so_long maps_valid/ok3.ber
-==32116== 
-🚫 You are missing coins! (0/10) 🚫
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-💀 You died! 💀
-==32116== 
-==32116== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32116== 
-==32116== 
-==32116== 
-==32116== 
-==32116== HEAP SUMMARY:
-==32116==     in use at exit: 0 bytes in 0 blocks
-==32116==   total heap usage: 1,223 allocs, 1,223 frees, 4,381,135 bytes allocated
-==32116== 
-==32116== All heap blocks were freed -- no leaks are possible
-==32116== 
-==32116== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152919== Command: ./so_long maps_valid/ok3.ber
+==152919== 
+==152919== 
+==152919== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152919== 
+==152919== Open AF_UNIX socket 45: <unknown>
+==152919== 
+==152919== 
+==152919== 
+==152919== 
+==152919== 
+==152919== 
+==152919== 
+==152919== HEAP SUMMARY:
+==152919==     in use at exit: 0 bytes in 0 blocks
+==152919==   total heap usage: 1,090 allocs, 1,090 frees, 4,377,415 bytes allocated
+==152919== 
+==152919== All heap blocks were freed -- no leaks are possible
+==152919== 
+==152919== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok4.ber
-==32239== Command: ./so_long maps_valid/ok4.ber
-==32239== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-🎊 Congratulation ! You won ! 🎊
-==32239== 
-==32239== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32239== 
-==32239== 
-==32239== 
-==32239== 
-==32239== HEAP SUMMARY:
-==32239==     in use at exit: 0 bytes in 0 blocks
-==32239==   total heap usage: 1,200 allocs, 1,200 frees, 4,380,591 bytes allocated
-==32239== 
-==32239== All heap blocks were freed -- no leaks are possible
-==32239== 
-==32239== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152922== Command: ./so_long maps_valid/ok4.ber
+==152922== 
+==152922== 
+==152922== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152922== 
+==152922== Open AF_UNIX socket 45: <unknown>
+==152922== 
+==152922== 
+==152922== 
+==152922== 
+==152922== 
+==152922== 
+==152922== 
+==152922== HEAP SUMMARY:
+==152922==     in use at exit: 0 bytes in 0 blocks
+==152922==   total heap usage: 1,087 allocs, 1,087 frees, 4,377,343 bytes allocated
+==152922== 
+==152922== All heap blocks were freed -- no leaks are possible
+==152922== 
+==152922== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok5.ber
-==32246== Command: ./so_long maps_valid/ok5.ber
-==32246== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-💀 You died! 💀
-==32246== 
-==32246== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32246== 
-==32246== 
-==32246== 
-==32246== 
-==32246== HEAP SUMMARY:
-==32246==     in use at exit: 0 bytes in 0 blocks
-==32246==   total heap usage: 1,765 allocs, 1,765 frees, 4,422,582 bytes allocated
-==32246== 
-==32246== All heap blocks were freed -- no leaks are possible
-==32246== 
-==32246== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152929== Command: ./so_long maps_valid/ok5.ber
+==152929== 
+==152929== 
+==152929== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152929== 
+==152929== Open AF_UNIX socket 45: <unknown>
+==152929== 
+==152929== 
+==152929== 
+==152929== 
+==152929== 
+==152929== 
+==152929== 
+==152929== HEAP SUMMARY:
+==152929==     in use at exit: 0 bytes in 0 blocks
+==152929==   total heap usage: 1,568 allocs, 1,568 frees, 4,417,718 bytes allocated
+==152929== 
+==152929== All heap blocks were freed -- no leaks are possible
+==152929== 
+==152929== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok6.ber
-==32253== Command: ./so_long maps_valid/ok6.ber
-==32253== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-Move count 16
-💀 You died! 💀
-==32253== 
-==32253== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32253== 
-==32253== 
-==32253== 
-==32253== 
-==32253== HEAP SUMMARY:
-==32253==     in use at exit: 0 bytes in 0 blocks
-==32253==   total heap usage: 1,920 allocs, 1,920 frees, 4,424,594 bytes allocated
-==32253== 
-==32253== All heap blocks were freed -- no leaks are possible
-==32253== 
-==32253== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152931== Command: ./so_long maps_valid/ok6.ber
+==152931== 
+==152931== 
+==152931== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152931== 
+==152931== Open AF_UNIX socket 45: <unknown>
+==152931== 
+==152931== 
+==152931== 
+==152931== 
+==152931== 
+==152931== 
+==152931== 
+==152931== HEAP SUMMARY:
+==152931==     in use at exit: 0 bytes in 0 blocks
+==152931==   total heap usage: 1,538 allocs, 1,538 frees, 4,415,118 bytes allocated
+==152931== 
+==152931== All heap blocks were freed -- no leaks are possible
+==152931== 
+==152931== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok7orok.ber
-==32255== Command: ./so_long maps_valid/ok7orok.ber
-==32255== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-🎊 Congratulation ! You won ! 🎊
-==32255== 
-==32255== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32255== 
-==32255== 
-==32255== 
-==32255== 
-==32255== HEAP SUMMARY:
-==32255==     in use at exit: 0 bytes in 0 blocks
-==32255==   total heap usage: 2,468 allocs, 2,468 frees, 4,490,927 bytes allocated
-==32255== 
-==32255== All heap blocks were freed -- no leaks are possible
-==32255== 
-==32255== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152934== Command: ./so_long maps_valid/ok7orok.ber
+==152934== 
+==152934== 
+==152934== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152934== 
+==152934== Open AF_UNIX socket 45: <unknown>
+==152934== 
+==152934== 
+==152934== 
+==152934== 
+==152934== 
+==152934== 
+==152934== 
+==152934== HEAP SUMMARY:
+==152934==     in use at exit: 0 bytes in 0 blocks
+==152934==   total heap usage: 2,383 allocs, 2,383 frees, 4,488,915 bytes allocated
+==152934== 
+==152934== All heap blocks were freed -- no leaks are possible
+==152934== 
+==152934== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok8.ber
-==32273== Command: ./so_long maps_valid/ok8.ber
-==32273== 
-==32273== 
-==32273== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32273== 
-==32273== 
-==32273== 
-==32273== 
-==32273== HEAP SUMMARY:
-==32273==     in use at exit: 0 bytes in 0 blocks
-==32273==   total heap usage: 1,374 allocs, 1,374 frees, 4,401,986 bytes allocated
-==32273== 
-==32273== All heap blocks were freed -- no leaks are possible
-==32273== 
-==32273== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152940== Command: ./so_long maps_valid/ok8.ber
+==152940== 
+==152940== 
+==152940== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152940== 
+==152940== Open AF_UNIX socket 45: <unknown>
+==152940== 
+==152940== 
+==152940== 
+==152940== 
+==152940== 
+==152940== 
+==152940== 
+==152940== HEAP SUMMARY:
+==152940==     in use at exit: 0 bytes in 0 blocks
+==152940==   total heap usage: 1,396 allocs, 1,396 frees, 4,402,690 bytes allocated
+==152940== 
+==152940== All heap blocks were freed -- no leaks are possible
+==152940== 
+==152940== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok9.ber
-==32280== Command: ./so_long maps_valid/ok9.ber
-==32280== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-💀 You died! 💀
-==32280== 
-==32280== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32280== 
-==32280== 
-==32280== 
-==32280== 
-==32280== HEAP SUMMARY:
-==32280==     in use at exit: 0 bytes in 0 blocks
-==32280==   total heap usage: 1,693 allocs, 1,693 frees, 4,414,530 bytes allocated
-==32280== 
-==32280== All heap blocks were freed -- no leaks are possible
-==32280== 
-==32280== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152942== Command: ./so_long maps_valid/ok9.ber
+==152942== 
+==152942== 
+==152942== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152942== 
+==152942== Open AF_UNIX socket 45: <unknown>
+==152942== 
+==152942== 
+==152942== 
+==152942== 
+==152942== 
+==152942== 
+==152942== 
+==152942== HEAP SUMMARY:
+==152942==     in use at exit: 0 bytes in 0 blocks
+==152942==   total heap usage: 1,471 allocs, 1,471 frees, 4,409,190 bytes allocated
+==152942== 
+==152942== All heap blocks were freed -- no leaks are possible
+==152942== 
+==152942== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 Test sur maps_valid/ok.ber
-==32287== Command: ./so_long maps_valid/ok.ber
-==32287== 
-Move count 1
-Move count 2
-Move count 3
-Move count 4
-Move count 5
-Move count 6
-Move count 7
-Move count 8
-Move count 9
-Move count 10
-Move count 11
-Move count 12
-Move count 13
-Move count 14
-Move count 15
-💀 You died! 💀
-==32287== 
-==32287== FILE DESCRIPTORS: 3 open (3 std) at exit.
-==32287== 
-==32287== 
-==32287== 
-==32287== 
-==32287== HEAP SUMMARY:
-==32287==     in use at exit: 0 bytes in 0 blocks
-==32287==   total heap usage: 1,759 allocs, 1,759 frees, 4,411,210 bytes allocated
-==32287== 
-==32287== All heap blocks were freed -- no leaks are possible
-==32287== 
-==32287== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==152949== Command: ./so_long maps_valid/ok.ber
+==152949== 
+==152949== 
+==152949== FILE DESCRIPTORS: 7 open (3 std) at exit.
+==152949== 
+==152949== Open AF_UNIX socket 45: <unknown>
+==152949== 
+==152949== 
+==152949== 
+==152949== 
+==152949== 
+==152949== 
+==152949== 
+==152949== HEAP SUMMARY:
+==152949==     in use at exit: 0 bytes in 0 blocks
+==152949==   total heap usage: 1,387 allocs, 1,387 frees, 4,401,910 bytes allocated
+==152949== 
+==152949== All heap blocks were freed -- no leaks are possible
+==152949== 
+==152949== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
 -------------------------
 === Fin des tests Valgrind ===

@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 18:16:44 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/06 19:39:24 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/08 20:59:57 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_line(char **map)
 		len_comp = ft_strlen(map[i]);
 		if (len != len_comp)
 		{
-			w_error("Line error\n");
+			w_error("Error: Different line size\n");
 			free_tab(map);
 			exit(EXIT_FAILURE);
 		}
@@ -55,7 +55,7 @@ void	check_double_n(char *temp)
 
 void	ft_strlen_n_error(char *file_content)
 {
-	w_error("Error\n");
+	w_error("Error: Something wrong with lines\n");
 	free(file_content);
 	exit(EXIT_FAILURE);
 }

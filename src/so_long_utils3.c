@@ -6,14 +6,13 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:43:19 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/07 20:11:58 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/08 18:14:33 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stddef.h>
-
-
+#include "libft.h"
 
 int	check_arg(int argc, char *argv[])
 {
@@ -50,3 +49,12 @@ int	ft_strlen_n(const char *s)
 	return (1);
 }
 
+int	ft_loser(t_game *game, int count)
+{
+	if (count == LOSE_COUNTER)
+	{
+		ft_printf("You losed\n");
+		free_game(game);
+	}
+	return (1);
+}

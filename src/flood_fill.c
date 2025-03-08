@@ -6,7 +6,7 @@
 /*   By: abonifac <abonifac@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:00:03 by abonifac          #+#    #+#             */
-/*   Updated: 2025/03/07 20:51:58 by abonifac         ###   ########.fr       */
+/*   Updated: 2025/03/08 18:20:19 by abonifac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	exit_valid(char **map, t_game *game)
 	if (map[i - 1][y] != 'G' && map[i + 1][y] != 'G' && map[i][y - 1] != 'G'
 		&& map[i][y + 1] != 'G')
 	{
-		w_error("Map invalid, exit not reachable\n");
+		w_error("Error: Map invalid, exit not reachable\n");
 		return (0);
 	}
 	if (count_in_map(map, 'C') > 0)
 	{
-		w_error("Not all coins are reacheables\n");
+		w_error("Error: Not all coins are reacheables\n");
 		return (0);
 	}
 	return (1);
